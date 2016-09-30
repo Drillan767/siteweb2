@@ -1,0 +1,29 @@
+<p>
+  <strong>Titre:</strong>
+  <%= @portfolio.titre %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @portfolio.description %>
+</p>
+
+<p>
+  <strong>Categorie:</strong>
+  <%= @portfolio.categorie %>
+</p>
+
+<p>
+  <strong>Lien:</strong>
+  <%= @portfolio.lien %>
+</p>
+
+<p>
+  <strong>Photos :</strong>
+  <% @portfolio.photos.each do |p| %>
+    <%= image_tag p.image %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
+<%= link_to 'Back', portfolios_path %>

@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title>Nouveau message</title>
+</head>
+<body>
+
+<p>
+  Un nouveau message a été envoyé depuis le site :
+</p>
+<br />
+<p>
+  <strong>Nom :</strong><br />
+  <%= @contact.nom %><br />
+  <br />
+  <strong>Email :</strong><br />
+  <%= @contact.email %><br />
+  <br />
+  <strong>Objet :</strong><br />
+  <%= @contact.objet %><br />
+  <br />
+  <strong>Message :</strong><br />
+  <%= simple_format(@contact.message) %>
+</p>
+</body>
+</html>

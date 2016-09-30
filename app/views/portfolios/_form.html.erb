@@ -1,0 +1,15 @@
+<%= simple_form_for(@portfolio, :html => {:multipart => true}) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :titre %>
+    <%= f.input :description %>
+    <%= file_field_tag "images[]", type: :file, multiple: true %>
+    <%= f.input :categorie %>
+    <%= f.input :lien %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

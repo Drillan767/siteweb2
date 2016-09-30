@@ -1,0 +1,9 @@
+<h1>Editing Article</h1>
+
+<%= render 'form', article: @article %>
+
+<strong>Image actuelle :</strong>
+<%= image_tag @article.image %>
+
+<%= link_to 'Show', @article %> |
+<%= link_to 'Back', articles_path %>
