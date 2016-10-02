@@ -1,6 +1,9 @@
 class PageController < ApplicationController
 
+  before_filter lambda {@body_class = 'Pagestatique'}
+
   def index
+
     @titre = 'Index'
   end
 

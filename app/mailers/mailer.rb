@@ -6,9 +6,9 @@ class Mailer < ActionMailer::Base
 
     @contact = contact
     @to = 'jd.levarato@gmail.com'
-    # @from = 'Moi mdr'
+    @from = 'Moi mdr'
 
-    mail(to: @to, subject: 'Nouveau contact depuis le site !') do |f|
+    mail(to: @to, from: @from, subject: 'Nouveau contact depuis le site !') do |f|
       f.html
     end
 

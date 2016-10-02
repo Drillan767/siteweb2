@@ -11,7 +11,7 @@ Tentons de faire ça proprement :
 * Partie contact :
   * Fonctionnelle
   * Un chouia de paramétrage est nécessaire pour D-Day (Déploiement Day)
-  * Manque l'intégration
+  * Intégration terminée !! \o/
   
 * Partie articles :
   * L'utilisateur (moi en l'occurence) peut y ajouter un titre, une phrase d'accroche, le texte lui meme, et une image.
@@ -33,3 +33,4 @@ Tentons de faire ça proprement :
   * Le système de titre ("Joseph Levarato | < la page en question>" ) est fait
   * Partie "qui suis-je", "contrat d'utilisation" et "plan du site" encore vide
   * Bower installé
+  * L'intégration du layout (partie haute) est terminée, manque plus qu'à faire le footer et quoi mettre dedans

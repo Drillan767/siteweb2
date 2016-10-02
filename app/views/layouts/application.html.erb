@@ -4,11 +4,10 @@
     <title><%= titre %></title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="<%= "#{controller.controller_name}".strip %>">
   <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
   <% end %>
@@ -16,13 +15,34 @@
       <p class="alert alert-danger"><%= alert %></p>
   <% end %>
 
-    <%= yield %>
+  <nav class="layout-nav">
+    <div class="layout-menu-left">
+      <ul>
+        <li><%= link_to image_tag('ruby.svg', :class => 'layout-home'), root_path %></li>
+        <li><%= link_to 'PORTFOLIO', portfolios_path, :class => 'layout-link' %></li>
+        <li><%= link_to 'ARTICLES', articles_path, :class => 'layout-link' %></li>
+        <li><%= link_to 'CONTACT', new_contact_path, :class => 'layout-link' %></li>
+      </ul>
+    </div>
 
+    <div class="layout-menu-right">
+      <ul>
+        <li><a href="https://twitter.com/Jaeger_Naut" class="layout-link"><i class="fa fa-twitter" aria-hidden="true"></i></i> TWITTER</a></li>
+        <li><a href="https://fr.linkedin.com/in/josephlevarato" class="layout-link"><i class="fa fa-linkedin-square" aria-hidden="true"></i> LINKEDIN</a></li>
+        <li><a href="https://github.com/Drillan767" class="layout-link"><i class="fa fa-github" aria-hidden="true"></i> GITHUB</a></li>
+      </ul>
+    </div>
+  </nav>
+
+    <%= yield %>
+<!--
     <footer>
       <% if user_signed_in? %>
           <%= link_to ' Administration', '/admin' %> | <%= link_to 'Déconnexion', destroy_user_session_path, method: :delete, :class => 'class'  %>
 
       <% end %>
     </footer>
+-->
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>

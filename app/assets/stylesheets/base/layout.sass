@@ -1,0 +1,39 @@
+// layout.sass
+
+.layout
+  &-menu-left
+    float: left
+    width: 45%
+
+  &-menu-right
+    float: right
+    width: 45%
+    text-align: right
+
+  &-home
+    width: 50px
+
+    &:hover
+      transform: rotate(45deg)
+
+  &-link
+    color: white
+    font-weight: bold
+    font-size: 15px
+    font-family: 'Montserrat-Regular', sans-serif
+
+    &:hover
+      color: $ruby
+      text-decoration: none
+
+
+//A optimiser...
+.layout-menu-left ul, .layout-menu-right ul
+  list-style-type: none
+  margin-left: 5%
+  margin-right: 5%
+  margin-top: 20px
+
+.layout-menu-left ul li, .layout-menu-right ul li
+  display: inline
+  margin-left: 20px

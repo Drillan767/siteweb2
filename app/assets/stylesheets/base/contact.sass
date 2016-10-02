@@ -1,0 +1,43 @@
+//contacts.sass
+
+.contacts
+  background: asset_url('background/lyon1080.jpg'), fixed, center
+
+  &-form
+    margin-top: 100px
+
+  &-slogan
+    color: white
+    font-size: 21px
+    text-align: center
+    margin-bottom: 40px
+    font-family: 'Lato-Regular', sans-serif
+
+  &-input
+    width: 100%
+    background-color: transparent
+    border: solid 2px white
+    box-shadow: none
+    outline-color: white
+    height: 41px
+    padding-left: 15px
+    color: white
+    font-family: Lato-Regular, sans-serif
+    margin-bottom: 20px
+
+  &-textarea
+    @extend .contacts-input
+    padding: 15px
+    height: 200px
+    resize: horizontal
+
+  &-submit
+    float: right
+    box-shadow: none
+    border: none
+    height: 45px
+    width: 100px
+    color: white
+    font-size: 18px
+    background-color: $ruby
+    font-family: Lato-Regular, sans-serif
