@@ -27,10 +27,14 @@ Tentons de faire ça proprement :
   * Le slug est également présent ici (et vive vive vive le référencement)
   * Manque le lien pour supprimer une photo en tant qu'administrateur
   * Les photos apparaitront de façon plutôt petites (maximum 250 px de large je pense) mais auront un zoom quand cliqué
-  * Manque l'intégration
+  * Intégration terminée
+  * Ajout de boutons en mode admin pour modifier ou supprimer un "album" depuis la vue index
+  * Pour le reste, voir le commit #da03822
+  * Intégration de la vue d'un album à faire
   
 * Général :
   * Le système de titre ("Joseph Levarato | < la page en question>" ) est fait
   * Partie "qui suis-je", "contrat d'utilisation" et "plan du site" encore vide
   * Bower installé
   * L'intégration du layout (partie haute) est terminée, manque plus qu'à faire le footer et quoi mettre dedans
+  * Ajout d'une partie permettant de se déco et d'accéder à l'administration lorsque connecté dans la nav (#da03822)
