@@ -17,7 +17,7 @@ class PortfoliosControllerTest < ActionDispatch::IntegrationTest
 
   test "should create portfolio" do
     assert_difference('Portfolio.count') do
-      post portfolios_url, params: { portfolio: { categorie: @portfolio.categorie, description: @portfolio.description, lien: @portfolio.lien, titre: @portfolio.titre } }
+      post portfolios_url, params: { portfolio: { description: @portfolio.description, public: @portfolio.public, thumbnail: @portfolio.thumbnail, titre: @portfolio.titre } }
     end
 
     assert_redirected_to portfolio_url(Portfolio.last)
@@ -34,7 +34,7 @@ class PortfoliosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update portfolio" do
-    patch portfolio_url(@portfolio), params: { portfolio: { categorie: @portfolio.categorie, description: @portfolio.description, lien: @portfolio.lien, titre: @portfolio.titre } }
+    patch portfolio_url(@portfolio), params: { portfolio: { description: @portfolio.description, public: @portfolio.public, thumbnail: @portfolio.thumbnail, titre: @portfolio.titre } }
     assert_redirected_to portfolio_url(@portfolio)
   end
 

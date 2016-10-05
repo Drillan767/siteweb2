@@ -1,31 +1,54 @@
-<h1>Portfolios</h1>
+  <div class="col-md-10 col-md-offset-1 portfolios-body container-fluid">
 
-<table>
-  <thead>
-    <tr>
-      <th>Titre</th>
-      <th>Description</th>
-      <th>Categorie</th>
-      <th>Lien</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <h1>Créations</h1>
 
-  <tbody>
-    <% @portfolios.each do |portfolio| %>
-      <tr>
-        <td><%= portfolio.titre %></td>
-        <td><%= portfolio.description %></td>
-        <td><%= portfolio.categorie %></td>
-        <td><%= portfolio.lien %></td>
-        <td><%= link_to 'Show', portfolio %></td>
-        <td><%= link_to 'Edit', edit_portfolio_path(portfolio) %></td>
-        <td><%= link_to 'Destroy', portfolio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <% @portfolios.each do |p| %>
+      <% if p.public %>
+        <div class="col-md-3 bloc">
+          <div class="hovereffect">
+            <%= image_tag p.thumbnail, :class=> 'img-responsive' %>
+            <div class="overlay">
+              <% if user_signed_in? %>
+                  <div class="anti-plebe">
+                    <p>
+                      <%= link_to edit_portfolio_path(p) do %>
+                          <i class="fa fa-wrench delete" aria-hidden="true"></i>
+                      <% end %>
+                      <%= link_to p, method: :delete, data: { confirm: 'T\'es sûr ?' } do %>
+                          <i class="fa fa-times delete" aria-hidden="true"></i>
+                      <% end %>
+                    </p>
+                  </div>
+              <% end %>
+              <h2 class="overlay-title"><%= p.titre %></h2>
+              <p class="overlay-category"><%= p.categorie %></p>
+              <p><%= link_to 'VOIR', p, :class => 'overlay-link' %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
     <% end %>
-  </tbody>
-</table>
 
-<br>
+    <div class="col-md-3 bloc">
+      <div class="hovereffect">
+        <%= image_tag 'code', :class=> 'img-responsive' %>
+        <div class="overlay">
+          <h2>Coming soon!</h2>
+          <p>D'autres projets arrivent, et vous pouvez en faire partie !</p>
+          <p><%= link_to 'Me contacter', new_contact_url%></p>
+        </div>
+      </div>
+    </div>
 
-<%= link_to 'New Portfolio', new_portfolio_path %>
+  </div>
+  <% if user_signed_in? %>
+    <div class="col-md-1 col-md-offset-1 portfolios-add">
+      <p class="layout-add">
+        <%= link_to new_portfolio_path, :class => 'misc-add' do %>
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        <% end %>
+      </p>
+    </div>
+  <% end %>
+

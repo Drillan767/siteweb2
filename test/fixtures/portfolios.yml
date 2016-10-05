@@ -3,11 +3,11 @@
 one:
   titre: MyString
   description: MyText
-  categorie: MyString
-  lien: MyString
+  public: false
+  thumbnail: MyString
 
 two:
   titre: MyString
   description: MyText
-  categorie: MyString
-  lien: MyString
+  public: false
+  thumbnail: MyString

@@ -9,20 +9,21 @@
 </p>
 
 <p>
-  <strong>Categorie:</strong>
-  <%= @portfolio.categorie %>
+  <strong>Public:</strong>
+  <%= @portfolio.public %>
 </p>
 
 <p>
-  <strong>Lien:</strong>
-  <%= @portfolio.lien %>
+  <strong>Thumbnail:</strong>
+  <%= @portfolio.thumbnail %>
 </p>
 
 <p>
-  <strong>Photos :</strong>
-  <% @portfolio.photos.each do |p| %>
-    <%= image_tag p.image %>
+  <strong>Images :</strong>
+  <% @portfolio.photos.each do |p|%>
+    <%= p.image %>
   <% end %>
+
 </p>
 
 <%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |

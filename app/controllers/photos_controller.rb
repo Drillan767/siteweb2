@@ -37,7 +37,7 @@ class PhotosController < ApplicationController
   # DELETE /photos/1
   def destroy
     @photo.destroy
-    redirect_to portfolio_url, notice: 'Photo supprimée.'
+    redirect_to portfolios_url, notice: 'Photo was successfully destroyed.'
   end
 
   private

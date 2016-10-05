@@ -1,12 +1,18 @@
-<%= simple_form_for(@portfolio, :html => {:multipart => true}) do |f| %>
-  <%= f.error_notification %>
+<%= form_for @portfolio, :html => {:multipart => true} do |f| %>
 
   <div class="form-inputs">
-    <%= f.input :titre %>
-    <%= f.input :description %>
+    <h6>Titre</h6>
+    <%= f.text_field :titre %>
+    <h6>Catégorie</h6>
+    <%= f.text_field :categorie %>
+    <h6>Description</h6>
+    <%= f.text_area :description %>
+    <h6>Public</h6>
+    <%= f.check_box :public %>
+    <h6>Thumbnail</h6>
+    <%= f.file_field :thumbnail %>
+    <h6>Images multiples</h6>
     <%= file_field_tag "images[]", type: :file, multiple: true %>
-    <%= f.input :categorie %>
-    <%= f.input :lien %>
   </div>
 
   <div class="form-actions">

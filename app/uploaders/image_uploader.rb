@@ -9,11 +9,13 @@ class ImageUploader < CarrierWave::Uploader::Base
   # storage :fog
 
   def store_dir
-    "portfolio/#{model.class.to_s.underscore}/#{mounted_as}"
+    'portfolio/photos'
   end
 
-  # Create different versions of your uploaded files:
+=begin
   version :thumb do
-    process :resize_to_fit => [50, 50]
+    process :resize_to_fit => [350, 360]
   end
+=end
+
 end

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :photos
+  resources :portfolios
+
+
   #Index (duh)
   root to: 'page#index'
 
@@ -7,8 +11,6 @@ Rails.application.routes.draw do
   authenticated :user do
     #Index admin
     match '/admin', to: 'page#admin', via: :get
-    resources :photos
-    resources :portfolios
     resources :articles
   end
 
@@ -21,8 +23,8 @@ Rails.application.routes.draw do
   end
 
   #Pages du portfolio visibles par les visiteurs
-  resources :photos, only: [:show]
-  resources :portfolios, only: [:show, :index]
+  # resources :photos, only: [:show]
+  # resources :portfolios, only: [:show, :index]
 
   #Pages des articles visibles par les visiteurs
   resources :articles, only: [:show, :index]

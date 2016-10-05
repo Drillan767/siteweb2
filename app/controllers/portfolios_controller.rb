@@ -3,7 +3,6 @@ class PortfoliosController < ApplicationController
 
   def index
     @portfolios = Portfolio.all
-    @titre = 'Porfolio'
   end
 
   def show
@@ -19,7 +18,6 @@ class PortfoliosController < ApplicationController
   def create
     @portfolio = Portfolio.new(portfolio_params)
     if @portfolio.save
-      # to handle multiple images upload on create
       if params[:images]
         params[:images].each { |image|
           @portfolio.photos.create(image: image)
@@ -27,12 +25,12 @@ class PortfoliosController < ApplicationController
       end
       redirect_to @portfolio, notice: 'Portfolio créé'
     else
-      render :new
+      render :new, notice: 'T\'as merdé'
     end
   end
 
   def update
-    if @portfolio.update(params[:portfolio].permit(:title,:description, :categorie, :lien))
+    if @portfolio.update(portfolio_params)
       if params[:images]
         params[:images].each { |image|
           @portfolio.photos.create(image: image)
@@ -43,10 +41,10 @@ class PortfoliosController < ApplicationController
       render :edit
     end
   end
-  
+
   def destroy
     @portfolio.destroy
-    redirect_to portfolios_url, notice: 'Portfolio supprimé'
+    redirect_to portfolios_url, notice: 'Portfolio was successfully destroyed.'
   end
 
   private
@@ -55,6 +53,6 @@ class PortfoliosController < ApplicationController
     end
 
     def portfolio_params
-      params.require(:portfolio).permit(:titre, :description, :categorie, :lien)
+      params.require(:portfolio).permit(:titre, :description, :public, :thumbnail, :categorie)
     end
 end
