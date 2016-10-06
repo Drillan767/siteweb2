@@ -9,16 +9,16 @@
             <%= image_tag p.thumbnail, :class=> 'img-responsive' %>
             <div class="overlay">
               <% if user_signed_in? %>
-                  <div class="anti-plebe">
-                    <p>
-                      <%= link_to edit_portfolio_path(p) do %>
-                          <i class="fa fa-wrench delete" aria-hidden="true"></i>
-                      <% end %>
-                      <%= link_to p, method: :delete, data: { confirm: 'T\'es sûr ?' } do %>
-                          <i class="fa fa-times delete" aria-hidden="true"></i>
-                      <% end %>
-                    </p>
-                  </div>
+                <div class="anti-plebe">
+                  <p>
+                    <%= link_to edit_portfolio_path(p) do %>
+                        <i class="fa fa-wrench delete" aria-hidden="true"></i>
+                    <% end %>
+                    <%= link_to p, method: :delete, data: { confirm: 'T\'es sûr ?' } do %>
+                        <i class="fa fa-times delete" aria-hidden="true"></i>
+                    <% end %>
+                  </p>
+                </div>
               <% end %>
               <h2 class="overlay-title"><%= p.titre %></h2>
               <p class="overlay-category"><%= p.categorie %></p>
@@ -42,6 +42,7 @@
     </div>
 
   </div>
+
   <% if user_signed_in? %>
     <div class="col-md-1 col-md-offset-1 portfolios-add">
       <p class="layout-add">

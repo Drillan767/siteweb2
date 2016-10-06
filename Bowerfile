@@ -1,3 +1,6 @@
 asset 'highlightjs'
 asset 'bootstrap'
 asset 'fontawesome'
+asset 'masonry'
+asset 'zoomify'
+asset 'imagesloaded'

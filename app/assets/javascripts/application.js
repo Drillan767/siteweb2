@@ -1,7 +1,9 @@
-
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require masonry/dist/masonry.pkgd.min.js
+//= require imagesloaded/imagesloaded.pkgd.min.js
+//= require zoomify
 //= require highlightjs
 //= require turbolinks
 //= require_tree .

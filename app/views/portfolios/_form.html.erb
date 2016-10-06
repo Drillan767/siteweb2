@@ -11,6 +11,10 @@
     <%= f.check_box :public %>
     <h6>Thumbnail</h6>
     <%= f.file_field :thumbnail %>
+    <br />
+    <h6>Image actuelle : </h6>
+    <%= image_tag @portfolio.thumbnail %>
+
     <h6>Images multiples</h6>
     <%= file_field_tag "images[]", type: :file, multiple: true %>
   </div>
@@ -18,4 +22,10 @@
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
+
+
+  <% @portfolio.photos.each do |p| %>
+    <%= image_tag p.image.url, :class => 'zoom' %>
+    <%= link_to 'Destroy', p, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
 <% end %>

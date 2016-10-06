@@ -20,11 +20,13 @@ Rails.application.routes.draw do
   #Se logger en tapant /login plutôt que /users/login, un poil moins relou
   devise_scope :user do
     get '/login' => 'devise/sessions#new'
+    resources :photos
+    resources :portfolios
   end
 
   #Pages du portfolio visibles par les visiteurs
-  # resources :photos, only: [:show]
-  # resources :portfolios, only: [:show, :index]
+  resources :photos, only: [:show]
+  resources :portfolios, only: [:show, :index]
 
   #Pages des articles visibles par les visiteurs
   resources :articles, only: [:show, :index]

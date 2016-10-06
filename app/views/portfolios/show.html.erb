@@ -1,30 +1,28 @@
-<p>
-  <strong>Titre:</strong>
-  <%= @portfolio.titre %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @portfolio.description %>
-</p>
-
-<p>
-  <strong>Public:</strong>
-  <%= @portfolio.public %>
-</p>
-
-<p>
-  <strong>Thumbnail:</strong>
-  <%= @portfolio.thumbnail %>
-</p>
-
-<p>
-  <strong>Images :</strong>
-  <% @portfolio.photos.each do |p|%>
-    <%= p.image %>
-  <% end %>
-
-</p>
 
 <%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
 <%= link_to 'Back', portfolios_path %>
+
+<div class="col-md-10 col-md-offset-1 portfolios-body container-fluid">
+  <div class="col-md-6">
+    <div class="masonry">
+      <% @portfolio.photos.each do |p|%>
+          <div class="col-sm-4 masonry-elements">
+            <%= image_tag p.image.url, :class => 'zoom' %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="portfolios-header">
+      <h1><%= @portfolio.titre %></h1>
+      <h4><%= @portfolio.categorie %></h4>
+    </div>
+    <div class="portfolio-content">
+      <p>
+        <%= simple_format(@portfolio.description)%>
+      </p>
+    </div>
+  </div>
+</div>
+
