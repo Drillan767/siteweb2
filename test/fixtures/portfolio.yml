@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  titre: MyString
+  date: 2016-10-09 01:25:19
+  categorie: MyString
+  thumbnail: MyString
+  description: MyText
+  public: false
+
+two:
+  titre: MyString
+  date: 2016-10-09 01:25:19
+  categorie: MyString
+  thumbnail: MyString
+  description: MyText
+  public: false

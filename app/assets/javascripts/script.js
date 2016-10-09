@@ -1,14 +1,18 @@
 // ImgZoom
 $(document).ready(function () {
-    var $container = $('.masonry');
+    var grid = document.querySelector('.grid');
 
-    $container.imagesLoaded(function () {
-        $container.masonry({
-            itemSelector: '.post-box',
-            columnWidth: '.post-box',
-            transitionDuration: 0
-        });
+    var msnry = new Masonry( grid, {
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer',
+        percentPosition: true
     });
+
+    imagesLoaded( grid ).on( 'progress', function() {
+        // layout Masonry after each image loads
+        msnry.layout();
+    });
+
     $('img.zoom').zoomify();
 });
 
@@ -23,8 +27,16 @@ activeLinks = $('.layout-link').filter(function () {
 // HighlightJS
 hljs.initHighlightingOnLoad();
 
-/*
-// ImgsLoader
-$grid.imagesLoaded().progress( function() {
-    $grid.masonry();
-});*/
+// external js: masonry.pkgd.js, imagesloaded.pkgd.js
+
+// init Isotope
+
+
+$('span.fa-stack').hover(
+    function() {
+        $(this).find('.misc-circle').show();
+    },
+    function() {
+        $('.misc-circle').hide();
+    }
+);

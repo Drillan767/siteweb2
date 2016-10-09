@@ -1,0 +1,35 @@
+<%= form_for @portfolio, :html => {:multipart => true} do |f| %>
+
+    <div class="form-inputs">
+      <h6>Titre</h6>
+      <%= f.text_field :titre %>
+      <h6>Date de création</h6>
+      <%= f.date_select :date, start_year: 2010, order: [:month, :year] %>
+      <h6>Catégorie</h6>
+      <%= f.text_field :categorie %>
+      <h6>Description</h6>
+      <%= f.text_area :description %>
+      <h6>Public</h6>
+      <%= f.check_box :public %>
+      <h6>Thumbnail</h6>
+      <%= f.file_field :thumbnail %>
+      <br />
+      <h6>Image actuelle : </h6>
+      <% if @portfolio.thumbnail.present? %>
+      <%= image_tag @portfolio.thumbnail %>
+      <% end %>
+
+      <h6>Images multiples</h6>
+      <%= file_field_tag "images[]", type: :file, multiple: true %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+
+
+    <% @portfolio.photos.each do |p| %>
+        <%= image_tag p.image.url, :class => 'zoom' %>
+        <%= link_to 'Destroy', p, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+<% end %>

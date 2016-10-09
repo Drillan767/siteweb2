@@ -1,0 +1,37 @@
+<div class="misc-actions">
+  <%= link_to('/portfolio', :class => 'misc-actions-button') do %>
+      <span class="fa-stack">
+        <i class="fa fa-circle-thin fa-stack-2x misc-circle"></i>
+        <i class="fa fa-arrow-left fa-stack-1x"></i>
+      </span>
+  <% end %>
+  <% if user_signed_in? %>
+    <%= link_to(edit_portfolio_path(@portfolio), :class => 'misc-actions-button') do %>
+      <span class="fa-stack">
+        <i class="fa fa-circle-thin fa-stack-2x misc-circle"></i>
+        <i class="fa fa-wrench fa-stack-1x"></i>
+      </span>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="portfolio-body">
+
+  <div class="portfolio-body-left grid">
+    <div class="grid-sizer"></div>
+    <% @portfolio.photos.shuffle.each do |p|%>
+        <div class="grid-item">
+          <%= image_tag p.image.url, :class => 'zoom' %>
+        </div>
+    <% end %>
+  </div>
+  <div class="portfolio-body-right">
+    <h1><%= @portfolio.titre %></h1>
+    <h4><%= @portfolio.categorie %> — <%= @portfolio.date.strftime('%m / %Y') %></h4>
+    <p>
+      <%= simple_format(@portfolio.description)%>
+    </p>
+  </div>
+
+</div>
+

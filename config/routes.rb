@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :portfolio
   resources :photos
-  resources :portfolios
+
 
 
   #Index (duh)
@@ -21,12 +22,12 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/login' => 'devise/sessions#new'
     resources :photos
-    resources :portfolios
+    resources :portfolio
   end
 
   #Pages du portfolio visibles par les visiteurs
   resources :photos, only: [:show]
-  resources :portfolios, only: [:show, :index]
+  resources :portfolio, only: [:show, :index]
 
   #Pages des articles visibles par les visiteurs
   resources :articles, only: [:show, :index]

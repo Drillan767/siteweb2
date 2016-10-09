@@ -1,4 +1,4 @@
-class PortfoliosController < ApplicationController
+class PortfolioController < ApplicationController
   before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -16,8 +16,9 @@ class PortfoliosController < ApplicationController
   end
 
   def create
-    @portfolio = Portfolio.new(portfolio_params)
+    @portfolio = Portfolio.create(portfolio_params)
     if @portfolio.save
+      # to handle multiple images upload on create
       if params[:images]
         params[:images].each { |image|
           @portfolio.photos.create(image: image)
@@ -25,18 +26,19 @@ class PortfoliosController < ApplicationController
       end
       redirect_to @portfolio, notice: 'Portfolio créé'
     else
-      render :new, notice: 'T\'as merdé'
+      render :new, alert: 'Erreur'
     end
   end
 
   def update
-    if @portfolio.update(portfolio_params)
+    if Portfolio.update(portfolio_params)
+      # to handle multiple images upload on update when user add more picture
       if params[:images]
         params[:images].each { |image|
           @portfolio.photos.create(image: image)
         }
       end
-      redirect_to @portfolio, notice: 'Portfolio mis à jour'
+      redirect_to @portfolio, notice: 'Album mis à jour'
     else
       render :edit
     end
@@ -44,15 +46,17 @@ class PortfoliosController < ApplicationController
 
   def destroy
     @portfolio.destroy
-    redirect_to portfolios_url, notice: 'Portfolio was successfully destroyed.'
+    redirect_to portfolio_index, notice: 'Portfolio supprimé'
   end
 
   private
+    # Use callbacks to share common setup or constraints between actions.
     def set_portfolio
       @portfolio = Portfolio.friendly.find(params[:id])
     end
 
+    # Only allow a trusted parameter "white list" through.
     def portfolio_params
-      params.require(:portfolio).permit(:titre, :description, :public, :thumbnail, :categorie)
+      params.require(:portfolio).permit(:titre, :date, :categorie, :thumbnail, :description, :public)
     end
 end
