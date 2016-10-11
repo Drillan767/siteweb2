@@ -1,2 +1,126 @@
-<h1>Page#index</h1>
-<p>Test salut wesh</p>
+<!DOCTYPE>
+<html lang="fr">
+<head>
+  <title><%= titre %></title>
+  <%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+
+<section>
+  <div class="landing">
+    <nav class="layout-nav">
+      <ul class="layout-nav-left">
+        <%= link_to image_tag('ruby.svg', :class => 'layout-home'), root_path %>
+        <li><%= link_to 'PORTFOLIO', '/portfolio', :class => 'layout-link' %></li>
+        <li><%= link_to 'ARTICLES', articles_path, :class => 'layout-link' %></li>
+        <li><%= link_to 'À PROPOS', '/a-propos', :class => 'layout-link' %></li>
+        <li><%= link_to 'CONTACT', new_contact_path, :class => 'layout-link' %></li>
+        <% if user_signed_in? %>
+            <li class="layout-pipe">|</li>
+            <li><%= link_to 'ADMINISTRATION','/admin', :class => 'layout-link' %></li>
+            <li><%= link_to 'DECONNEXION', destroy_user_session_path, method: :delete, :class => 'layout-link'  %></li>
+        <% end %>
+      </ul>
+
+      <ul class="layout-nav-right">
+        <li><a href="https://twitter.com/Jaeger_Naut" class="layout-link" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></i> TWITTER</a></li>
+        <li><a href="https://fr.linkedin.com/in/josephlevarato" class="layout-link" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i> LINKEDIN</a></li>
+        <li><a href="https://github.com/Drillan767" class="layout-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> GITHUB</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <div class="title">JOSEPH LEVARATO, 23 ANS, DEVELOPPEUR FULL - STACK</div>
+    </div>
+  </div>
+
+    <div class="detail">
+      <div class="detail-body col-md-4">
+        <div class="detail-icon">
+          <i class="fa fa-code" aria-hidden="true"></i>
+          <p>FRONT-END</p>
+        </div>
+        <div class="detail-desc">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolorem exercitationem illo libero, nobis
+            vel. A ab accusantium aliquid animi ex itaque minus, nobis non recusandae, reiciendis sed sunt ullam!
+          </p>
+        </div>
+      </div>
+
+      <div class="detail-body col-md-4">
+        <div class="detail-icon">
+          <i class="fa fa-cogs" aria-hidden="true"></i>
+          <p>BACK END</p>
+        </div>
+        <div class="detail-desc">
+          <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolorem exercitationem illo libero, nobis
+          vel. A ab accusantium aliquid animi ex itaque minus, nobis non recusandae, reiciendis sed sunt ullam!
+          </p>
+        </div>
+      </div>
+
+      <div class="detail-body col-md-4">
+        <div class="detail-icon">
+          <i class="fa fa-users" aria-hidden="true"></i>
+          <p>USER EXPERIENCE (UX)</p>
+        </div>
+        <div class="detail-desc">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolorem exercitationem illo libero, nobis
+            vel. A ab accusantium aliquid animi ex itaque minus, nobis non recusandae, reiciendis sed sunt ullam!
+          </p>
+        </div>
+      </div>
+
+      <div class="detail-body col-md-4">
+        <div class="detail-icon">
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <p>SEO</p>
+        </div>
+        <div class="detail-desc">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolorem exercitationem illo libero, nobis
+            vel. A ab accusantium aliquid animi ex itaque minus, nobis non recusandae, reiciendis sed sunt ullam!
+          </p>
+        </div>
+      </div>
+
+      <div class="detail-body col-md-4">
+        <div class="detail-icon">
+          <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+          <p>HEBERGEMENT</p>
+        </div>
+        <div class="detail-desc">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolorem exercitationem illo libero, nobis
+            vel. A ab accusantium aliquid animi ex itaque minus, nobis non recusandae, reiciendis sed sunt ullam!
+          </p>
+        </div>
+      </div>
+
+      <div class="detail-body col-md-4">
+        <div class="detail-icon">
+          <i class="fa fa-terminal" aria-hidden="true"></i>
+          <p>WEBMASTERING</p>
+        </div>
+        <div class="detail-desc">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolorem exercitationem illo libero, nobis
+            vel. A ab accusantium aliquid animi ex itaque minus, nobis non recusandae, reiciendis sed sunt ullam!
+          </p>
+        </div>
+      </div>
+
+
+    </div>
+
+  </section>
+  <footer>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab consequuntur cum explicabo iure maxime modi molestiae. Atque consequatur doloribus hic inventore minus nobis odio, optio pariatur reiciendis repudiandae soluta suscipit?
+  </footer>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</body>
+</html>

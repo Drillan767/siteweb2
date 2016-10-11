@@ -3,16 +3,20 @@ class PortfolioController < ApplicationController
 
   def index
     @portfolios = Portfolio.all
+    @titre = 'Portfolio'
   end
 
   def show
+    @titre = @portfolio.titre
   end
 
   def new
     @portfolio = Portfolio.new
+    @titre = 'Nouveau'
   end
 
   def edit
+    @titre = 'Editer'
   end
 
   def create

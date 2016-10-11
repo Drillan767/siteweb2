@@ -7,20 +7,20 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="<%= "#{controller.controller_name}".strip %>">
+  <body class="<%= controller_name %> <%= action_name %>">
   <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
   <% end %>
   <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
   <% end %>
-
   <nav class="layout-nav">
 
       <ul class="layout-nav-left">
         <%= link_to image_tag('ruby.svg', :class => 'layout-home'), root_path %>
         <li><%= link_to 'PORTFOLIO', '/portfolio', :class => 'layout-link' %></li>
         <li><%= link_to 'ARTICLES', articles_path, :class => 'layout-link' %></li>
+        <li><%= link_to 'À PROPOS', '/a-propos', :class => 'layout-link' %></li>
         <li><%= link_to 'CONTACT', new_contact_path, :class => 'layout-link' %></li>
         <% if user_signed_in? %>
           <li class="layout-pipe">|</li>
@@ -36,8 +36,14 @@
       </ul>
 
   </nav>
-
+  <section>
     <%= yield %>
+  </section>
+
+  <footer>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto commodi delectus dolor, facere fuga fugiat fugit harum incidunt inventore iste iusto natus officia officiis omnis quaerat sunt tempore ut.
+    lelezfmkfsdkfmsdfksmdfksdml
+  </footer>
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>

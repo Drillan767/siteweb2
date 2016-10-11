@@ -1,46 +1,42 @@
 Rails.application.routes.draw do
 
-  resources :portfolio
-  resources :photos
-
-
-
-  #Index (duh)
+  # Index (duh)
   root to: 'page#index'
 
-  #Pages visibles uniquement par moi si je suis co
+  # Pages visibles uniquement par moi si je suis co
   authenticated :user do
     #Index admin
     match '/admin', to: 'page#admin', via: :get
     resources :articles
   end
 
-  #Gestion utilisateur
+  # Gestion utilisateur
   devise_for :users, :controller => { :registrations => 'registrations' }
 
-  #Se logger en tapant /login plutôt que /users/login, un poil moins relou
+  # Se logger en tapant /login
   devise_scope :user do
     get '/login' => 'devise/sessions#new'
-    resources :photos
-    resources :portfolio
   end
 
-  #Pages du portfolio visibles par les visiteurs
+  # Pages du portfolio visibles par les visiteurs
   resources :photos, only: [:show]
   resources :portfolio, only: [:show, :index]
 
-  #Pages des articles visibles par les visiteurs
+  # Pages des articles visibles par les visiteurs
   resources :articles, only: [:show, :index]
 
-  #Partie contact
+  # Partie contact
   get '/contact', to: 'contacts#new', as: :new_contact
   post '/contact', to: 'contacts#create', as: :contacts
 
+  # Page 'à propos'
+
+  match '/a-propos', to: 'page#about', via: :get
 
 
 
-  #Pages statiques
-  #get 'page/index'
+
+  # Pages statiques
 
   #get 'page/cgu'
 
