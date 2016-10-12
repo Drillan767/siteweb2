@@ -8,6 +8,10 @@ $ruby: #b02a35
   font-family: Montserrat-Regular
   src: asset_url('fonts/Montserrat-Regular.otf')
 
+@font-face
+  font-family: Lato-Regular
+  src: asset_url('fonts/Lato-Regular.ttf')
+
 @mixin center()
   -webkit-transform: translate(-50%,-50%)
   -ms-transform: translate(-50%,-50%)
@@ -78,8 +82,7 @@ body
   margin-left: 20px
 
 .landing
-  background: asset_url('background/lyon1080.jpg') center
-  background-attachment: fixed
+  background: asset_url('background/lyon1080.jpg') center fixed
   height: 100vh
 
 .container
@@ -90,8 +93,7 @@ body
   font-weight: 800
   color: transparent
   font-size: 120px
-  background: asset_url('background/snow_night.jpg') repeat
-  background-position: 40% 50%
+  background: asset_url('background/snow_night.jpg') repeat 40% 50%
   -webkit-background-clip: text
   position: relative
   line-height: 90px
@@ -100,14 +102,28 @@ body
 .detail
   min-height: 100vh
   background: asset_url('background/foggy.jpg') bottom fixed
-  
+
+  &-icon
+    text-align: center
+    font-size: 2em
+
+    & p
+      font-family: 'Montserrat-Regular', sans-serif
+
+  &-desc
+    text-align: justify
+    margin-top: 2vh
+    padding-bottom: 1vh
+    font-family: Lato-Regular
+
   &-titre
     color: #fff
-    font-family: Montserrat-Regular
+    font-family: Montserrat-Regular, sans-serif
 
   &-body
     margin-top: 15vh
     color: #fff
+    padding: 0 4em
 
 section
   position: relative
@@ -115,6 +131,26 @@ section
 
 footer
   height: 25vh
+  
+.footer-block
+  color: #fff
+  & h2
+    font-family: 'Montserrat-Regular', sans-serif
+    border-bottom: solid 2px
+  & a
+    color: #fff
+    font-weight: bold
+
+    &:hover
+      text-decoration: none
+      color: $ruby
+      
+  &-link
+    list-style-type: none
+    text-align: right
+
+  &-social
+    font-size: 2em
 
 .test
   height: 10px

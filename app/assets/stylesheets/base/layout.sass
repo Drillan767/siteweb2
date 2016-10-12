@@ -1,5 +1,8 @@
 // layout.sass
 
+body
+  background-color: #3c3c3c
+
 .layout
 
   &-nav
@@ -65,6 +68,24 @@ section
   box-shadow: 0 9px 25px 0 rgba(0, 0, 0, 0.75)
 
 footer
-  background-color: #3c3c3c
-  background-attachment: fixed
   height: 25vh
+
+.footer-block
+  color: #fff
+  & h2
+    font-family: 'Montserrat-Regular', sans-serif
+    border-bottom: solid 2px
+  & a
+    color: #fff
+    font-weight: bold
+
+    &:hover
+      text-decoration: none
+      color: $ruby
+
+  &-link
+    list-style-type: none
+    text-align: right
+
+  &-social
+    font-size: 2em

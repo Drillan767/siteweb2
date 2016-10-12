@@ -41,8 +41,49 @@
   </section>
 
   <footer>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto commodi delectus dolor, facere fuga fugiat fugit harum incidunt inventore iste iusto natus officia officiis omnis quaerat sunt tempore ut.
-    lelezfmkfsdkfmsdfksmdfksdml
+
+    <div class="footer-block col-md-2 col-md-offset-2">
+      <h2>Joseph Levarato</h2>
+      <p>
+        17, Boulevard Yves Farge<br />
+        69007 - Lyon, France<br />
+        <br />
+        N° SIRET : 818 885 907 00019
+      </p>
+      <a href="tel:+33675566262" >06 75 56 62 62</a>
+    </div>
+    <div class="footer-block col-md-2 col-md-offset-1">
+      <h2>Liens utiles</h2>
+      <p class="footer-block-social">
+        <%= link_to 'https://twitter.com/Jaeger_Naut', :target => '_blank' do %>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+        <% end %>
+        <%= link_to 'https://fr.linkedin.com/in/josephlevarato', :target => '_blank' do %>
+            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+        <% end %>
+        <%= link_to 'https://github.com/Drillan767', :target => '_blank' do %>
+            <i class="fa fa-github" aria-hidden="true"></i>
+        <% end %>
+        <br />
+        <%= link_to '/CVJosephLevaratoCDI.pdf', :target => '_blank' do %>
+            <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+        <% end %>
+      </p>
+
+      <%= link_to 'Me contacter', new_contact_path %>
+    </div>
+    <div class="footer-block col-md-2 col-md-offset-1">
+      <h2>Plan du site</h2>
+      <ul class="footer-block-link">
+        <li><%= link_to 'Accueil', root_path %></li>
+        <li><%= link_to 'Portfolio', '/porfolio' %></li>
+        <li><%= link_to 'Articles', articles_url %></li>
+        <li><%= link_to 'À propos', '/a-propos' %></li>
+        <li><%= link_to 'Contact', new_contact_url %></li>
+        <li><%=link_to 'Mentions légales', '/mentions' %></li>
+      </ul>
+    </div>
+
   </footer>
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>

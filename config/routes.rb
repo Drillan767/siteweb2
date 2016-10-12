@@ -32,13 +32,12 @@ Rails.application.routes.draw do
   # Page 'à propos'
 
   match '/a-propos', to: 'page#about', via: :get
-
+  match '/mentions', to: 'page#cgu', via: :get
 
 
 
   # Pages statiques
 
-  #get 'page/cgu'
 
   #get 'page/map'
 

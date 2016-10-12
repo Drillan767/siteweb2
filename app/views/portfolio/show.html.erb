@@ -1,13 +1,13 @@
 <div class="misc-actions">
   <%= link_to('/portfolio', :class => 'misc-actions-button') do %>
-      <span class="fa-stack">
+      <span class="fa-stack icon-circle">
         <i class="fa fa-circle-thin fa-stack-2x misc-circle"></i>
         <i class="fa fa-arrow-left fa-stack-1x"></i>
       </span>
   <% end %>
   <% if user_signed_in? %>
     <%= link_to(edit_portfolio_path(@portfolio), :class => 'misc-actions-button') do %>
-      <span class="fa-stack">
+      <span class="fa-stack icon-circle">
         <i class="fa fa-circle-thin fa-stack-2x misc-circle"></i>
         <i class="fa fa-wrench fa-stack-1x"></i>
       </span>
