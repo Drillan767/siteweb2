@@ -11,6 +11,13 @@
   </tbody>
 
 <div class="articles-body col-md-offset-1 col-md-10">
+  <% if user_signed_in? %>
+      <div class="col-xs-6 col-xs-offset-3 text-center">
+        <%= link_to new_article_path, :class => 'icon-circle' do %>
+            Nouvel article <i class="fa fa-plus"></i>
+        <% end %>
+      </div>
+  <% end %>
 
   <% @articles.each_with_index do |a, index| %>
   <% if a.public %>
@@ -43,14 +50,6 @@
 
 
   <% end %>
-  <% end %>
-
-  <% if user_signed_in? %>
-  <div class="col-xs-6 col-xs-offset-3 text-center">
-    <%= link_to new_article_path, :class => 'icon-circle' do %>
-        Nouvel article <i class="fa fa-plus"></i>
-    <% end %>
-  </div>
   <% end %>
 </div>
 
