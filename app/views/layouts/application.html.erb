@@ -9,28 +9,46 @@
 
   <body class="<%= controller_name %> <%= action_name %>">
   <div class="wrapper">
-  <nav class="layout-nav">
+    <!-- BARRE DE MENUS -->
+    <div class="container-fluid">
 
-      <ul class="layout-nav-left">
-        <%= link_to image_tag('ruby.svg', :class => 'layout-home'), root_path %>
-        <li><%= link_to 'PORTFOLIO', '/portfolio', :class => 'layout-link' %></li>
-        <li><%= link_to 'ARTICLES', articles_path, :class => 'layout-link' %></li>
-        <li><%= link_to 'À PROPOS', '/a-propos', :class => 'layout-link' %></li>
-        <li><%= link_to 'CONTACT', new_contact_path, :class => 'layout-link' %></li>
-        <% if user_signed_in? %>
-          <li class="layout-pipe">|</li>
-          <li><%= link_to 'ADMINISTRATION','/admin', :class => 'layout-link' %></li>
-          <li><%= link_to 'DECONNEXION', destroy_user_session_path, method: :delete, :class => 'layout-link'  %></li>
-        <% end %>
-      </ul>
+      <!-- Static navbar -->
+      <nav class="navbar">
+        <div class="container-fluid">
 
-      <ul class="layout-nav-right">
-        <li><a href="https://twitter.com/Jaeger_Naut" class="layout-link" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></i> TWITTER</a></li>
-        <li><a href="https://fr.linkedin.com/in/josephlevarato" class="layout-link" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i> LINKEDIN</a></li>
-        <li><a href="https://github.com/Drillan767" class="layout-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> GITHUB</a></li>
-      </ul>
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <i class="fa fa-plus" aria-hidden="true"></i>
+            </button>
+            <%= link_to image_tag('ruby.svg', :class => 'layout-home'), root_path %>
+          </div>
 
-  </nav>
+          <div id="navbar" class="navbar-collapse collapse">
+
+            <ul class="nav navbar-nav">
+              <li><%= link_to 'PORTFOLIO', '/portfolio' %></li>
+              <li><%= link_to 'ARTICLES', articles_path %></li>
+              <li><%= link_to 'À PROPOS', '/a-propos' %></li>
+              <li><%= link_to 'CONTACT', new_contact_path %></li>
+              <% if user_signed_in? %>
+                  <li><%= link_to 'ADMINISTRATION','/admin', :class => 'layout-link' %></li>
+                  <li><%= link_to 'DECONNEXION', destroy_user_session_path, method: :delete, :class => 'layout-link'  %></li>
+              <% end %>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="https://twitter.com/Jaeger_Naut" class="layout-link" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></i> TWITTER</a></li>
+              <li><a href="https://fr.linkedin.com/in/josephlevarato" class="layout-link" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i> LINKEDIN</a></li>
+              <li><a href="https://github.com/Drillan767" class="layout-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> GITHUB</a></li>
+            </ul>
+
+          </div><!--/.nav-collapse -->
+
+        </div><!--/.container-fluid -->
+      </nav>
+
+
+    </div> <!-- /container -->
 
     <% if notice %>
         <p class="alert alert-success"><%= notice %></p>

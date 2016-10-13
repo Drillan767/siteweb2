@@ -8,30 +8,19 @@ body
   min-height: 100vh
   box-shadow: 0 9px 25px 0 rgba(0, 0, 0, 0.75)
 
+nav li:hover a
+  background-color: transparent !important
+  color: $ruby !important
+  font-weight: bold !important
+
+.navbar-header button
+  color: $ruby
+  font-size: 2em
+
+nav.navbar
+  padding: 2%
+
 .layout
-
-  &-nav
-    display: flex
-    justify-content: space-between
-    padding-top: 20px
-    list-style-type: none
-
-    &-left
-      display: flex
-      list-style-type: none
-
-      & li
-        margin-top: 10px
-        margin-left: 1.5em
-
-    &-right
-      @extend .layout-nav-left
-      margin-right: 50px
-
-      & li
-        display: inline
-        margin-left: 0
-        margin-right: 1.5em
 
   &-home
     width: 50px
@@ -39,29 +28,6 @@ body
 
     &:hover
       transform: rotate(45deg)
-
-  &-link
-    color: white
-    font-weight: bold
-    font-size: 15px
-    font-family: 'Montserrat-Regular', sans-serif
-
-  &-pipe
-    @extend .layout-link
-
-    &:hover
-    color: white !important
-
-//A optimiser...
-.layout-menu-left ul, .layout-menu-right ul
-  list-style-type: none
-  margin-left: 5%
-  margin-right: 5%
-  margin-top: 20px
-
-.layout-menu-left ul li, .layout-menu-right ul li
-  display: inline
-  margin-left: 20px
 
 footer
   height: 25vh

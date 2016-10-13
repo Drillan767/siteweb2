@@ -11,7 +11,7 @@
             <% if user_signed_in? %>
               <div class="anti-plebe">
                 <p>
-                  <%= link_to edit(p) do %>
+                  <%= link_to edit_portfolio_path(p) do %>
                     <i class="fa fa-wrench delete" aria-hidden="true"></i>
                   <% end %>
                   <%= link_to p, method: :delete, data: { confirm: 'T\'es sûr ?' } do %>
