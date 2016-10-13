@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
 
   def show
     @titre = @article.titre
+    @articles = Article.all
   end
 
   def new

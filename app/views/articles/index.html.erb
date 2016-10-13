@@ -19,7 +19,7 @@
       </div>
   <% end %>
 
-  <% @articles.each_with_index do |a, index| %>
+  <% @articles.reverse_each do |a, index| %>
   <% if a.public %>
     <article class="col-md-12 articles-body-each">
 

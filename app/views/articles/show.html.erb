@@ -1,13 +1,40 @@
+<div class="col-md-2 col-md-offset-1 articles-header">
+  <%= link_to articles_path do %>
+      <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Retour à la liste
+  <% end %>
+  <% if user_signed_in? %>
+    | <%= link_to edit_article_path(@article) do %>
+        <i class="fa fa-wrench" aria-hidden="true"></i> Editer
+      <% end %>
+  <% end %>
+</div>
+
 <div class="articles-body col-md-10 col-md-offset-1">
-  <%= image_tag @article.image.url %>
+  <div class="articles-body-illu" style="background-image: url('<%= @article.image.url %>')"></div>
+
+  <div class="articles-body-header">
+    <h1><%= @article.titre %></h1>
+    <h4><%= @article.categorie %></h4>
+    <h5>Créé le <%= @article.created_at.strftime('%d / %m / %Y') %> | Dernière MÀJ le <%= @article.updated_at.strftime('%d / %m / %Y') %></h5>
+  </div>
+  <br clear="all" />
+  <hr>
+  <div class="articles-body-content">
+    <div class="col-md-8">
+      <%= simple_format(@article.contenu) %>
+    </div>
+    <div class="col-md-4 articles-latest">
+      <% @articles.reverse_each do |a| %>
+        <%= link_to a do %>
+          <article class="title" style="background: url('<%= a.image.url %>') no-repeat center">
+            <h3><%= a.titre %></h3>
+            <h5><%= a.categorie %></h5>
+          </article>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
 
 </div>
-<!--
-<%= @article.titre %>
-<%= @article.image %>
-<%= @article.public %>
-<%= @article.contenu %>
-<%= @article.categorie %>
--->
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+

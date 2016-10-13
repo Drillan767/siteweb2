@@ -5,7 +5,6 @@
 //= require imagesloaded/imagesloaded.pkgd.min.js
 //= require zoomify
 //= require highlightjs
-//= require parallax.js/parallax.min.js
 //= require script
 //= require turbolinks
 //= require_tree .

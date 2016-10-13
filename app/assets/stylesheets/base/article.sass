@@ -13,10 +13,22 @@ article
   &-body
     background-color: rgba(0, 0, 0, 0.4)
     margin-top: 6em
-    padding-top: 2em
+    margin-bottom: 5em
+    padding: 2em
     
     &-photo
       text-align: center
+
+    &-illu
+      height: 400px
+      overflow-y: hidden
+      background: fixed no-repeat bottom
+
+      & img
+        width: 100%
+
+    &-header h5
+      float: right
 
     &-link
       text-align: center
@@ -33,8 +45,13 @@ article
         font-size: 1em
         font-family: 'Lato-Regular', sans-serif
 
+  &-header
+    font-size: 1.5em
 
-.parallax-window
-  min-height: 400px
-  background: transparent
+  &-latest
+    border-left: solid 1px
+
+.title
+  padding: 1px 5px
+
 
