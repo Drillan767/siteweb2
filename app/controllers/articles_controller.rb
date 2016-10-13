@@ -3,9 +3,11 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
+    @titre = 'Articles'
   end
 
   def show
+    @titre = @article.titre
   end
 
   def new
@@ -44,6 +46,6 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-      params.require(:article).permit(:titre, :resume, :contenu, :image, :test)
+      params.require(:article).permit(:titre, :categorie, :public, :contenu)
     end
 end

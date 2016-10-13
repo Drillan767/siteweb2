@@ -46,7 +46,6 @@ hljs.initHighlightingOnLoad();
 
 // init Isotope
 
-
 $('span.icon-circle').hover(
     function() {
         $(this).find('.misc-circle').show();

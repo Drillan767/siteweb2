@@ -1,2 +1,37 @@
+article
+  margin: 1%
+  transition: background-color .3s
+
+  &:hover
+    background-color: rgba(60, 60, 60, 0.3)
+
 .articles
-  background: asset_url('background/article.jpeg') center no-repeat fixed
+
+  & div.wrapper
+    background: asset_url('background/article.jpeg') center no-repeat fixed
+
+  &-body
+    background-color: rgba(0, 0, 0, 0.4)
+    margin-top: 6em
+    padding-bottom: 2em
+    
+    &-photo
+      text-align: center
+
+    &-link
+      text-align: center
+    
+    &-content
+      color: #fff
+
+      &h2
+        font-size: 2.5em
+        font-family: Montserrat-Light, sans-serif
+
+      & p
+        text-align: justify
+        font-size: 1em
+        font-family: 'Lato-Regular', sans-serif
+
+
+

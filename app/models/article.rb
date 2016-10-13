@@ -1,8 +1,6 @@
 class Article < ApplicationRecord
-  extend FriendlyId
+
   mount_uploader :image, ArticleUploader
-  validates_presence_of :titre
+  extend FriendlyId
   friendly_id :titre, use: :slugged
-
-
 end

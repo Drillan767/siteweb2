@@ -2,12 +2,16 @@
 
 one:
   titre: MyString
-  resume: MyString
+  categorie: MyString
+  public: false
   contenu: MyText
   image: MyString
+  slug: MyString
 
 two:
   titre: MyString
-  resume: MyString
+  categorie: MyString
+  public: false
   contenu: MyText
   image: MyString
+  slug: MyString

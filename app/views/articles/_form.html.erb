@@ -1,14 +1,11 @@
-<%= simple_form_for(@article, html: {multipart: true}) do |f| %>
-  <%= f.error_notification %>
+<%= form_for(@article) do |f| %>
 
   <div class="form-inputs">
-    <%= f.input :titre %>
-    <%= f.input :resume %>
-    <%= f.input :contenu %>
-    <%= f.label :image %>
-    <%= f.file_field :image %>
-    <%= f.file_field :test %>
-
+    <%= f.text_field :titre, :placeholder => 'Titre' %> <br />
+    <%= f.text_field :categorie, :placeholder => 'Catégorie'%><br />
+    <%= f.check_box :public %><br />
+    <%= f.text_area :contenu, :placeholder => 'Contenu' %><br />
+    <%= f.file_field :image %><br />
   </div>
 
   <div class="form-actions">

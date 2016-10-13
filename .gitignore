@@ -17,6 +17,7 @@ config/secrets.yml
 vendor
 public/uploads
 public/portfolio
+public/articles
 db/migrate
 
 # Ignore Byebug command history file.

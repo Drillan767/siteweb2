@@ -1,7 +1,5 @@
 class PageController < ApplicationController
 
-  before_filter lambda {@body_class = 'Pagestatique'}
-
   def index
     @titre = 'Accueil'
     render :layout => false

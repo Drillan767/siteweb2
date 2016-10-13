@@ -2,6 +2,11 @@
 
 body
   background-color: #3c3c3c
+  
+.wrapper
+  position: relative
+  min-height: 100vh
+  box-shadow: 0 9px 25px 0 rgba(0, 0, 0, 0.75)
 
 .layout
 
@@ -41,10 +46,6 @@ body
     font-size: 15px
     font-family: 'Montserrat-Regular', sans-serif
 
-    &:hover
-      color: $ruby
-      text-decoration: none
-
   &-pipe
     @extend .layout-link
 
@@ -61,11 +62,6 @@ body
 .layout-menu-left ul li, .layout-menu-right ul li
   display: inline
   margin-left: 20px
-
-section
-  position: relative
-  min-height: 100vh
-  box-shadow: 0 9px 25px 0 rgba(0, 0, 0, 0.75)
 
 footer
   height: 25vh
