@@ -19,6 +19,7 @@
       </div>
   <% end %>
 
+  <% if @articles.exists? %>
   <% @articles.reverse_each do |a, index| %>
   <% if a.public %>
     <article class="col-md-12 articles-body-each">
@@ -50,6 +51,10 @@
 
 
   <% end %>
+  <% end %>
+  <% else %>
+    <br clear="all"/>
+    <h1 class="text-center">Pas encore d'articles</h1>
   <% end %>
 </div>
 

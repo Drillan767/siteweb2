@@ -50,7 +50,7 @@ class PortfolioController < ApplicationController
 
   def destroy
     @portfolio.destroy
-    redirect_to portfolio_index, notice: 'Portfolio supprimé'
+    redirect_to Portfolio, notice: 'Portfolio supprimé'
   end
 
   private

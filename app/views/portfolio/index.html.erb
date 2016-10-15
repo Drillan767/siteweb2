@@ -2,6 +2,7 @@
 
   <h1>Créations</h1>
 
+  <% if @portfolios.exists? %>
   <% @portfolios.each do |p| %>
     <% if p.public %>
       <div class="col-md-3 bloc">
@@ -28,8 +29,9 @@
       </div>
     <% end %>
 
-  <% end %>
 
+  <% end %>
+  <% end %>
   <div class="col-md-3 bloc">
     <div class="hovereffect">
       <%= image_tag 'code', :class=> 'img-responsive' %>
