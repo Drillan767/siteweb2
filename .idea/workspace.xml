@@ -4,15 +4,23 @@
     <bookmark url="file://$PROJECT_DIR$/app/views/contacts/new.html.erb" line="0" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66c9082c-59f5-4ada-85c2-2313a769f2a3" name="Default" comment="&gt; fixes">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20161004190207_create_portfolios.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20161004190608_create_photos.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20161005000703_add_categorie_to_portfolio.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20161005001722_add_slug_to_portfolio.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20161005015351_add_slug_to_articles.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+    <list default="true" id="66c9082c-59f5-4ada-85c2-2313a769f2a3" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20160929183903_devise_create_users.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20160929193654_create_articles.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20160929215533_create_contacts.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20160930001339_add_slug_to_portfolio.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20160930002857_create_friendly_id_slugs.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20161003215449_add_bullshit_to_portfolio.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20161004015122_add_public_to_portfolio.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20161004024109_add_other_fileupload_to_articles.rb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db/migrate/20161004190207_create_portfolios.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db/migrate/20161004190608_create_photos.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db/migrate/20161005000703_add_categorie_to_portfolio.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db/migrate/20161005001722_add_slug_to_portfolio.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db/migrate/20161005015351_add_slug_to_articles.rb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/db/migrate/20161004190207_create_portfolios.rb" afterPath="$PROJECT_DIR$/db/migrate/20160929172803_create_portfolios.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/db/migrate/20161004190608_create_photos.rb" afterPath="$PROJECT_DIR$/db/migrate/20160929173014_create_photos.rb" />
     </list>
     <ignored path="siteweb2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -523,7 +531,7 @@
       <workItem from="1476299441424" duration="17079000" />
       <workItem from="1476353300273" duration="25470000" />
       <workItem from="1476439261787" duration="695000" />
-      <workItem from="1476465175341" duration="22373000" />
+      <workItem from="1476465175341" duration="22548000" />
     </task>
     <task id="LOCAL-00001" summary="Mise à jour du gitignore (public/upload)">
       <created>1475198421267</created>
@@ -651,11 +659,18 @@
       <option name="project" value="LOCAL" />
       <updated>1476544314193</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="&gt; correction de boulettes">
+      <created>1476545211919</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1476545211919</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="242354000" />
+    <option name="totallyTimeSpent" value="242529000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -710,7 +725,8 @@
     <MESSAGE value="&gt; Intégration de la page &quot;à propos&quot; en cours&#10;&gt; Rétablissement du js permettant de savoir sur quelle page on est" />
     <MESSAGE value="&gt; fixes" />
     <MESSAGE value="&gt; Correctif en cas d'aucun portfolio ou article" />
-    <option name="LAST_COMMIT_MESSAGE" value="&gt; Correctif en cas d'aucun portfolio ou article" />
+    <MESSAGE value="&gt; correction de boulettes" />
+    <option name="LAST_COMMIT_MESSAGE" value="&gt; correction de boulettes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
