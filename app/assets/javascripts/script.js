@@ -32,10 +32,10 @@ $(document).ready(function(){
 
 // Soulignement des liens de la barre de navigation si on est dans le "bon" domaine
 var currentURL = document.location.href.split('/');
-$('.layout-link.current').removeClass('current');
-activeLinks = $('.layout-link').filter(function () {
+$('.nav-link.current').removeClass('current');
+activeLinks = $('.nav-link').filter(function () {
     return this.href === 'http://localhost:3000/'+currentURL[3];
-}).closest('.layout-link').addClass('current');
+}).closest('.nav-link').addClass('current');
 
 // HighlightJS
 hljs.initHighlightingOnLoad();
@@ -52,3 +52,152 @@ $('span.icon-circle').hover(
         $('.misc-circle').hide();
     }
 );
+
+
+
+var ctx1 = $("#chart1");
+var chart1 = new Chart(ctx1, {
+    type: 'horizontalBar',
+    data: {
+        labels: ["HTML / CSS", "JavaScript / jQuery", "PHP / MySQL",  "Ruby / Ruby on Rails"],
+        datasets: [{
+            data: [9, 8, 7, 7],
+            backgroundColor: [
+                'rgba(255, 255, 255, 0.4)',
+                'rgba(255, 255, 255, 0.4)',
+                'rgba(255, 255, 255, 0.4)',
+                'rgba(255, 255, 255, 0.4)'
+
+
+            ],
+            borderColor: [
+                'rgba(255,255,255,1)',
+                'rgba(255,255,255,1)',
+                'rgba(255,255,255,1)',
+                'rgba(255,255,255,1)'
+
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                gridLines: {
+                    display:false
+                }
+            }],
+            xAxes: [{
+                ticks: {
+                    beginAtZero:true
+                },
+                gridLines: {
+                    display:false
+                }
+            }]
+        },
+        title: {
+            display: true,
+            text: 'Domaine de compétences (sur 10)',
+            fontColor: "#fff"
+        },
+        legend: {
+            display: false
+        }
+    }
+});
+
+var ctx2 = $("#chart2");
+var chart2 = new Chart(ctx2, {
+    type: 'horizontalBar',
+    data: {
+        labels: ["AngularJS", "ReactJS"],
+        datasets: [{
+            data: [60, 10],
+            backgroundColor: [
+                'rgba(255, 255, 255, 0.4)',
+                'rgba(255, 255, 255, 0.4)'
+            ],
+            borderColor: [
+                'rgba(255, 255, 255, 1)',
+                'rgba(255, 255, 255, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                },
+                gridLines: {
+                    display:false
+                },
+                fontColor: '#fff'
+            }],
+            xAxes: [{
+                ticks: {
+                    beginAtZero:true
+                },
+                gridLines: {
+                    display:false
+                }
+            }]
+        },
+        title: {
+            display: true,
+            text: 'Avancement d\'apprentissage d\'une nouvelle langue (en %)',
+            fontColor: "#fff"
+        },
+        legend: {
+            display: false
+        }
+    }
+});
+
+if($('body').is('.page.about')){
+    var ctx3 = $("#chart3");
+    var chart3 = new Chart(ctx3, {
+        type: 'doughnut',
+        data: {
+            labels: ["Projets web persos", "jeux-vidéos", "Regarder des vidéos", "Veilles technologiques", "Cinéma"],
+            datasets: [{
+                data: [28, 27, 23, 14, 8],
+                backgroundColor: [
+                    'rgba(176, 42, 53,  0.2)',
+                    'rgba(0, 255, 0, 0.2)',
+                    'rgba(255, 0, 0, 0.2)',
+                    'rgba(25, 25, 112, 0.2)',
+                    'rgba(0, 0, 0, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(176, 42, 53, 1)',
+                    'rgba(0, 255, 0, 1)',
+                    'rgba(255, 0, 0, 1)',
+                    'rgba(25, 25, 112, 1)',
+                    'rgba(255, 255, 255, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    display: false
+                }],
+                xAxes: [{
+                    display: false
+                }]
+            },
+            title: {
+                display: true,
+                text: 'Occupations (en %)',
+                fontColor: "#fff"
+            },
+            legend: {
+                display: false
+            }
+        }
+    });
+}

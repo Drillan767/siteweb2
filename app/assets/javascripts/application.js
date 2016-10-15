@@ -5,6 +5,7 @@
 //= require imagesloaded/imagesloaded.pkgd.min.js
 //= require zoomify
 //= require highlightjs
+//= require chart.js/dist/Chart.min.js
 //= require script
-//= require turbolinks
+// require turbolinks
 //= require_tree .
