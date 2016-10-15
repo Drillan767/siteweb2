@@ -56,6 +56,7 @@ $('span.icon-circle').hover(
 
 
 var ctx1 = $("#chart1");
+Chart.defaults.global.defaultFontColor = '#fff';
 var chart1 = new Chart(ctx1, {
     type: 'horizontalBar',
     data: {
@@ -81,6 +82,7 @@ var chart1 = new Chart(ctx1, {
         }]
     },
     options: {
+        labelFontColor : "#fff",
         scales: {
             yAxes: [{
                 gridLines: {
@@ -89,7 +91,7 @@ var chart1 = new Chart(ctx1, {
             }],
             xAxes: [{
                 ticks: {
-                    beginAtZero:true
+                    beginAtZero:true,
                 },
                 gridLines: {
                     display:false
@@ -102,7 +104,10 @@ var chart1 = new Chart(ctx1, {
             fontColor: "#fff"
         },
         legend: {
-            display: false
+            display: false,
+            font: {
+                color: "white"
+            }
         }
     }
 });
@@ -147,7 +152,7 @@ var chart2 = new Chart(ctx2, {
         },
         title: {
             display: true,
-            text: 'Avancement d\'apprentissage d\'une nouvelle langue (en %)',
+            text: 'Avancement d\'apprentissage d\'un nouveau langage (en %)',
             fontColor: "#fff"
         },
         legend: {
@@ -176,7 +181,7 @@ if($('body').is('.page.about')){
                     'rgba(0, 255, 0, 1)',
                     'rgba(255, 0, 0, 1)',
                     'rgba(25, 25, 112, 1)',
-                    'rgba(255, 255, 255, 1)'
+                    'rgba(0, 0, 0, 1)'
                 ],
                 borderWidth: 1
             }]
