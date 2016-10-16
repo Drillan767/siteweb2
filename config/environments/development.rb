@@ -38,6 +38,5 @@ Rails.application.configure do
   config.assets.debug = true
   config.assets.quiet = true
   config.assets.digest = false
-  config.web_console.whitelisted_ips = '90.65.15.244'
 
 end

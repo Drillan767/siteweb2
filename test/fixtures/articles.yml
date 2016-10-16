@@ -3,15 +3,15 @@
 one:
   titre: MyString
   categorie: MyString
-  public: false
   contenu: MyText
   image: MyString
   slug: MyString
+  public: false
 
 two:
   titre: MyString
   categorie: MyString
-  public: false
   contenu: MyText
   image: MyString
   slug: MyString
+  public: false

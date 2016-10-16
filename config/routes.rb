@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :articles
   resources :portfolio
   # Index (duh)
   root to: 'page#index'
@@ -8,8 +9,7 @@ Rails.application.routes.draw do
   authenticated :user do
     #Index admin
     match '/admin', to: 'page#admin', via: :get
-    resources :articles
-    end
+      end
 
   # Gestion utilisateur
   devise_for :users, :controller => { :registrations => 'registrations' }
