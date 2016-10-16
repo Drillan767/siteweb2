@@ -39,9 +39,11 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.2)
+    bcrypt (3.1.11)
     bcrypt (3.1.11-x64-mingw32)
     bower-rails (0.11.0)
     builder (3.2.2)
+    byebug (9.0.6)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -85,8 +87,12 @@ GEM
     mini_magick (4.5.1)
     mini_portile2 (2.1.0)
     minitest (5.9.1)
+    mysql2 (0.4.4)
     mysql2 (0.4.4-x64-mingw32)
     nio4r (1.2.1)
+    nokogiri (1.6.8)
+      mini_portile2 (~> 2.1.0)
+      pkg-config (~> 1.1.7)
     nokogiri (1.6.8-x64-mingw32)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
@@ -160,6 +166,7 @@ GEM
     websocket-extensions (0.1.2)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES

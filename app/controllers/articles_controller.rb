@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
     if @article.save
       redirect_to @article, notice: 'Article was successfully created.'
     else
-      render :new, alert: @article.full_messages.first
+      render :new, alert: @article.errors.full_messages.first
     end
   end
 
@@ -32,7 +32,7 @@ class ArticlesController < ApplicationController
     if @article.update(article_params)
       redirect_to @article, notice: 'Article was successfully updated.'
     else
-      render :edit
+      render :edit, alert: @article.errors.full_messages.first
     end
   end
 

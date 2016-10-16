@@ -2,16 +2,16 @@
 
 one:
   titre: MyString
-  date: 2016-10-09 01:25:19
   categorie: MyString
-  thumbnail: MyString
   description: MyText
   public: false
+  thumbnail: MyString
+  slug: MyString
 
 two:
   titre: MyString
-  date: 2016-10-09 01:25:19
   categorie: MyString
-  thumbnail: MyString
   description: MyText
   public: false
+  thumbnail: MyString
+  slug: MyString
