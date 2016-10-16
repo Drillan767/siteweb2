@@ -18,7 +18,7 @@ vendor
 public/uploads
 public/portfolio
 public/articles
-db/migrate
+db/migrate/*
 
 # Ignore Byebug command history file.
 .byebug_history
