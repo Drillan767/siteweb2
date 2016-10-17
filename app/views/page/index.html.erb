@@ -3,6 +3,7 @@
 <head>
   <title><%= titre %></title>
   <%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'responsive', media: 'all', 'data-turbolinks-track': 'reload' %>
 </head>
 <body>
 
@@ -166,7 +167,7 @@
   <!-- FOOTER -->
   <footer>
 
-    <div class="footer-block col-md-2 col-md-offset-2">
+    <div class="footer-block col-md-3 col-md-offset-1">
       <h2>Joseph Levarato</h2>
       <p>
         17, Boulevard Yves Farge<br />
@@ -196,7 +197,7 @@
 
       <%= link_to 'Me contacter', new_contact_path %>
     </div>
-    <div class="footer-block col-md-2 col-md-offset-1">
+    <div class="footer-block col-md-3 col-md-offset-1">
       <h2>Plan du site</h2>
       <ul class="footer-block-link">
         <li><%= link_to 'Accueil', root_path %></li>

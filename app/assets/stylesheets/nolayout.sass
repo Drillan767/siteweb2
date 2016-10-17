@@ -4,6 +4,9 @@ $ruby: #b02a35
   background: #be1818
   color: #fff
 
+body
+  background-color: #3c3c3c !important
+
 @font-face
   font-family: Montserrat-Regular
   src: asset_url('fonts/Montserrat-Regular.otf')
@@ -97,6 +100,8 @@ body
     &-link
       border: solid 2px
       padding: 15px
+      color: white
+      font-weight: bold
 
       &:hover
         color: $ruby
@@ -121,7 +126,7 @@ section
   box-shadow: 0 9px 25px 0 rgba(0, 0, 0, 0.75)
 
 footer
-  height: 25vh
+  min-height: 25vh
   
 .footer-block
   color: #fff
