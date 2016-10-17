@@ -51,7 +51,7 @@ class PortfolioController < ApplicationController
   # DELETE /portfolio/1
   def destroy
     @portfolio.destroy
-    redirect_to Portfolio, notice: 'Portfolio was successfully destroyed.'
+    redirect_to Portfolio, notice: 'Portfolio supprimé.'
   end
 
   private

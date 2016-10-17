@@ -30,13 +30,6 @@ $(document).ready(function(){
     });
 });
 
-// Soulignement des liens de la barre de navigation si on est dans le "bon" domaine
-var currentURL = document.location.href.split('/');
-$('.nav-link.current').removeClass('current');
-activeLinks = $('.nav-link').filter(function () {
-    return this.href === 'http://localhost:3000/'+currentURL[3];
-}).closest('.nav-link').addClass('current');
-
 // HighlightJS
 hljs.initHighlightingOnLoad();
 
@@ -52,8 +45,6 @@ $('span.icon-circle').hover(
         $('.misc-circle').hide();
     }
 );
-
-
 
 var ctx1 = $("#chart1");
 Chart.defaults.global.defaultFontColor = '#fff';
@@ -166,7 +157,7 @@ if($('body').is('.page.about')){
     var chart3 = new Chart(ctx3, {
         type: 'doughnut',
         data: {
-            labels: ["Projets web persos", "jeux-vidéos", "Regarder des vidéos", "Veilles technologiques", "Cinéma"],
+            labels: ["Projets web persos", "jeux vidéos", "Regarder des vidéos", "Veilles technologiques", "Cinéma"],
             datasets: [{
                 data: [28, 27, 23, 14, 8],
                 backgroundColor: [

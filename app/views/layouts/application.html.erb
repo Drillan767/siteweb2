@@ -26,10 +26,10 @@
           <div id="navbar" class="navbar-collapse collapse">
 
             <ul class="nav navbar-nav">
-              <li><%= link_to 'PORTFOLIO', Portfolio, :class=> 'nav-link' %></li>
-              <li><%= link_to 'ARTICLES', articles_path, :class=> 'nav-link' %></li>
-              <li><%= link_to 'À PROPOS', '/a-propos', :class=> 'nav-link' %></li>
-              <li><%= link_to 'CONTACT', new_contact_path, :class=> 'nav-link' %></li>
+              <li><%= link_to 'PORTFOLIO', Portfolio, :class => current_page?(Portfolio) ? 'current' : '' %></li>
+              <li><%= link_to 'ARTICLES', articles_path, :class => current_page?(articles_path) ? 'current' : '' %></li>
+              <li><%= link_to 'À PROPOS', '/a-propos', :class => current_page?('/a-propos') ? 'current' : '' %></li>
+              <li><%= link_to 'CONTACT', new_contact_path, :class => current_page?(new_contact_path) ? 'current' : '' %></li>
               <% if user_signed_in? %>
                   <li><%= link_to 'ADMINISTRATION','/admin', :class => 'layout-link' %></li>
                   <li><%= link_to 'DECONNEXION', destroy_user_session_path, method: :delete, :class => 'layout-link'  %></li>
@@ -37,9 +37,10 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="https://twitter.com/Jaeger_Naut" class="layout-link" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></i> TWITTER</a></li>
-              <li><a href="https://fr.linkedin.com/in/josephlevarato" class="layout-link" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i> LINKEDIN</a></li>
-              <li><a href="https://github.com/Drillan767" class="layout-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> GITHUB</a></li>
+              <li><a href="https://twitter.com/Jaeger_Naut" class="layout-link" target="_blank"> <i class="fa fa-twitter" aria-hidden="true"></i></i> TWITTER</a></li>
+              <li><a href="https://fr.linkedin.com/in/josephlevarato" class="layout-link" target="_blank"> <i class="fa fa-linkedin-square" aria-hidden="true"></i> LINKEDIN</a></li>
+              <li><a href="https://github.com/Drillan767" class="layout-link" target="_blank"> <i class="fa fa-github" aria-hidden="true"></i> GITHUB</a></li>
+              <li><a href="http://www.viadeo.com/p/002poyycsp8djrm" class="layout-link" target="_blank"> <i class="fa fa-viadeo" aria-hidden="true"></i> VIADEO</a></li>
             </ul>
 
           </div><!--/.nav-collapse -->

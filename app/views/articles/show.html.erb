@@ -24,8 +24,9 @@
       <%= simple_format(@article.contenu) %>
     </div>
     <div class="col-md-4 articles-latest">
-      <% @articles.reverse_each do |a| %>
-        <%= link_to a do %>
+      <h4> Derniers articles</h4>
+      <% @articles.first(5).reverse_each do |a| %>
+        <%= link_to a, :class => current_page?(a) ? 'hide' : '' do %>
           <article class="title" style="background: url('<%= a.image.url %>') no-repeat center">
             <h3><%= a.titre %></h3>
             <h5><%= a.categorie %></h5>
@@ -33,9 +34,7 @@
         <% end %>
       <% end %>
     </div>
-
   </div>
-
 </div>
 
 
