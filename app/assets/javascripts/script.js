@@ -107,14 +107,20 @@ var ctx2 = $("#chart2");
 var chart2 = new Chart(ctx2, {
     type: 'horizontalBar',
     data: {
-        labels: ["AngularJS", "ReactJS"],
+        labels: ["AngularJS", "ReactJS", "Swift", "Laravel", ".NET"],
         datasets: [{
-            data: [60, 10],
+            data: [60, 10, 0, 0, 0],
             backgroundColor: [
+                'rgba(255, 255, 255, 0.4)',
+                'rgba(255, 255, 255, 0.4)',
+                'rgba(255, 255, 255, 0.4)',
                 'rgba(255, 255, 255, 0.4)',
                 'rgba(255, 255, 255, 0.4)'
             ],
             borderColor: [
+                'rgba(255, 255, 255, 1)',
+                'rgba(255, 255, 255, 1)',
+                'rgba(255, 255, 255, 1)',
                 'rgba(255, 255, 255, 1)',
                 'rgba(255, 255, 255, 1)'
             ],

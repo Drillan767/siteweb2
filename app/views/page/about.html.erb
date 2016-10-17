@@ -1,38 +1,56 @@
 <div class="col-md-10 col-md-offset-1 page-body">
 
 <!--  <p>t ki?</p>
-  <%= RUBY_VERSION %><br />
+  <br />
   <%= Gem.loaded_specs["rails"].version.to_s %>-->
 
-  <div class="col-md-6">
+  <div class="col-md-6 page-body-desc">
     <h1>Joseph Levarato</h1>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium amet asperiores dicta magni nisi placeat temporibus totam? Cumque ducimus earum excepturi ipsam, odit ratione reprehenderit soluta! Sint tenetur, unde!
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aut ea eius esse fuga modi nostrum quam quibusdam quo, vero? Adipisci asperiores aut ea enim illo necessitatibus optio quam sed.
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta esse eveniet nihil perspiciatis quo recusandae repellat tenetur vero voluptatibus. Accusamus atque dicta, distinctio eaque excepturi maxime optio perferendis perspiciatis voluptate!
+      Je suis un développeur PHP / Ruby de 23 ans habitant Lyon depuis maintenant cinq ans, et freelance depuis bientôt un an.<br />
+      Ayant au départ commencé par des études de lettres modernes après un bac L, j'ai finalement décidé de me consacrer
+      à ma seconde passion, l'informatique en général et le développement web en particulier. <br />
+      J'ai ainsi donc suivi une formation au sein de l'Institut G4, qui m'a permis d'obtenir des bases solides en
+      matière de développement web, mais aussi également dans l'auto-formation. J'ai alors fait des veilles technologiques
+      pour découvrir des frameworks web que je pourrai tester, et c'est ainsi que j'ai découvert Ruby on Rails, pour lequel
+      je me suis pris d'affection et me suis spécialisé, même si je suis loin d'avoir encore tout vu.
     </p>
   </div>
   <div class="col-md-6">
-    <%= image_tag('jochachou') %>
-  </div>
-
-  <div class="col-md-4">
-    <canvas id="chart1"></canvas>
-  </div>
-  <div class="col-md-4">
-    <canvas id="chart2"></canvas>
-  </div>
-  <div class="col-md-4">
-    <canvas id="chart3"></canvas>
+    <img src="http://placekitten.com/550/500" alt="">
   </div>
 
   <div class="col-md-12">
+    <h3>Quelques statistiques...</h3>
+
+    <div class="col-md-4">
+      <canvas id="chart1"></canvas>
+    </div>
+    <div class="col-md-4">
+      <canvas id="chart2"></canvas>
+    </div>
+    <div class="col-md-4">
+      <canvas id="chart3"></canvas>
+    </div>
+  </div>
+
+  <div class="col-md-12 page-body-desc">
     <hr>
     <h1>Le site</h1>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ab architecto autem consectetur dolore et excepturi inventore laborum laudantium pariatur possimus praesentium quasi quia rem repudiandae sint sunt tempora vero!
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ab architecto autem consectetur dolore et excepturi inventore laborum laudantium pariatur possimus praesentium quasi quia rem repudiandae sint sunt tempora vero!
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ab architecto autem consectetur dolore et excepturi inventore laborum laudantium pariatur possimus praesentium quasi quia rem repudiandae sint sunt tempora vero!
+      Le site fonctionne avec Ruby version <%= RUBY_VERSION %> et Ruby on Rails version <%= Gem.loaded_specs["rails"].version.to_s %>. <br />
+      Une version précédente existait mais me déplaisait sur bien des points. J'ai donc passé beaucoup de mon temps libre
+      afin d'accumuler des connaissances que je pourrai réutiliser pour ce site ou des projets professionnels.<br />
+      Il m'a fallu également beaucoup de temps pour que mes veilles technologiques basées autour du design me permettent
+      de déterminer l'apparence du site, que je voulais le plus moderne possible.<br />
+      Mon principal défi et objectif était à la fois de "m'amuser", mais aussi de pouvoir utiliser en un site web tout
+      ce que j'ai pu découvrir et apprendre pendant mes veilles ou recherches, telles que le multi upload de fichiers, les
+      boucles de rails Bower ou flex.<br />
+      <br />
+      J'ai décidé de centraliser les connaissances que j'ai pu trouver sur différents sites à travers le monde et sur des
+      forums, pour les concentrer ici, en français, car je considère avoir suffisamment passé du temps à chercher des réponses
+      partout pour épargner cette peine à quelqu'un d'autres qui aurait les mêmes questions et qui aurait des difficultés
+      avec l'anglais. Vous pourrez retrouver ces connaissances dans la partie <%= link_to 'articles', articles_path %>
     </p>
   </div>
 
