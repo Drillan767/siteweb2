@@ -1,5 +1,5 @@
 <div class="col-md-2 col-md-offset-1 articles-header">
-  <%= link_to articles_path do %>
+  <%= link_to articles_path, :title => 'Retour' do %>
       <i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Retour à la liste
   <% end %>
   <% if user_signed_in? %>
@@ -26,7 +26,7 @@
     <div class="col-md-4 articles-latest">
       <h4> Derniers articles</h4>
       <% @articles.first(5).reverse_each do |a| %>
-        <%= link_to a, :class => current_page?(a) ? 'hide' : '' do %>
+        <%= link_to a, :class => current_page?(a) ? 'hide' : '', :title => 'Voir '+ a.titre do %>
           <article class="title" style="background: url('<%= a.image.url %>') no-repeat center">
             <h3><%= a.titre %></h3>
             <h5><%= a.categorie %></h5>

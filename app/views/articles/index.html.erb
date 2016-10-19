@@ -8,38 +8,36 @@
   <% end %>
 
   <% if @articles.exists? %>
-  <% @articles.reverse_each do |a, index| %>
-  <% if a.public %>
-    <article class="col-md-12 articles-body-each">
+    <% @articles.reverse_each do |a| %>
+      <% if a.public %>
+        <article class="col-md-12 articles-body-each">
 
-      <div class="col-md-3 articles-body-photo">
-        <% if !a.image.url.nil? %>
-          <%= link_to image_tag(a.image), a %>
-        <% end %>
-      </div>
+          <div class="col-md-3 articles-body-photo">
+            <% if !a.image.url.nil? %>
+              <%= link_to image_tag(a.image), a, :title => 'Lire '+a.titre %>
+            <% end %>
+          </div>
 
+          <div class="col-md-9 articles-body-content">
 
-      <div class="col-md-9 articles-body-content">
+            <h2><%= link_to a.titre, a, :title => 'Lire '+a.titre %></h2>
 
-        <h2><%= link_to a.titre, a %></h2>
+            <h4><%= a.categorie %> — Le <%= a.created_at.strftime('%d / %m / %Y') %></h4>
+            <p>
+              <%= strip_tags(a.contenu).truncate_words(75, omission: '...') %>
+            </p>
+            <div class="articles-body-link">
+            <%= link_to 'Lire la suite', a, :title => 'Lire '+a.titre %><% if user_signed_in? %> | <%= link_to 'Modifier', edit_article_path(a)%> | <%= link_to 'Supprimer', article_path(a), :method => :delete, data: { confirm: 'Are you sure?' } %><% end %>
+            </div>
 
-        <h4><%= a.categorie %> — Le <%= a.created_at.strftime('%d / %m / %Y') %></h4>
-        <p>
-          <%= strip_tags(a.contenu).truncate_words(75, omission: '...') %>
-        </p>
-        <div class="articles-body-link">
-        <%= link_to 'Lire la suite', a %><% if user_signed_in? %> | <%= link_to 'Modifier', edit_article_path(a)%> | <%= link_to 'Supprimer', article_path(a), :method => :delete, data: { confirm: 'Are you sure?' } %><% end %>
-        </div>
+          </div>
 
-      </div>
+        </article>
 
-    </article>
+        <br clear="all" />
 
-    <br clear="all" />
-
-
-  <% end %>
-  <% end %>
+      <% end %>
+    <% end %>
   <% else %>
     <br clear="all"/>
     <h1 class="text-center">Pas encore d'articles</h1>

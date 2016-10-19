@@ -1,5 +1,5 @@
 <div class="misc-actions">
-  <%= link_to('/portfolio', :class => 'misc-actions-button') do %>
+  <%= link_to Portfolio, :class => 'misc-actions-button', :title => 'Retour' do %>
       <span class="fa-stack icon-circle">
         <i class="fa fa-circle-thin fa-stack-2x misc-circle"></i>
         <i class="fa fa-arrow-left fa-stack-1x"></i>
@@ -33,7 +33,7 @@
       </p>
     <br clear="all" />
     <div class="portfolio-body-right-link">
-      <%= link_to 'VOIR', @portfolio.lien, :class => '', :target => '_blank' %>
+      <%= link_to 'VOIR', @portfolio.lien, :class => '', :target => '_blank', :title => 'Voir '+@portfolio.titre %>
     </div>
   </div>
 

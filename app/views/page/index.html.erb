@@ -22,16 +22,16 @@
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <i class="fa fa-plus" aria-hidden="true"></i>
             </button>
-            <%= link_to image_tag('ruby.svg', :class => 'layout-home'), root_path %>
+            <%= link_to image_tag('ruby.svg', :class => 'layout-home', :title => 'Accueil'), root_path %>
           </div>
 
           <div id="navbar" class="navbar-collapse collapse">
 
             <ul class="nav navbar-nav">
-              <li><%= link_to 'PORTFOLIO', Portfolio %></li>
-              <li><%= link_to 'ARTICLES', articles_path %></li>
-              <li><%= link_to 'À PROPOS', '/a-propos' %></li>
-              <li><%= link_to 'CONTACT', new_contact_path %></li>
+              <li><%= link_to 'PORTFOLIO', Portfolio, :title => 'Portfolios' %></li>
+              <li><%= link_to 'ARTICLES', articles_path, :title => 'Articles' %></li>
+              <li><%= link_to 'À PROPOS', '/a-propos', :title => 'A propos' %></li>
+              <li><%= link_to 'CONTACT', new_contact_path, :title => 'Contact' %></li>
               <% if user_signed_in? %>
                 <li><%= link_to 'ADMINISTRATION','/admin' %></li>
                 <li><%= link_to 'DECONNEXION', destroy_user_session_path, method: :delete %></li>
@@ -39,10 +39,10 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="https://twitter.com/Jaeger_Naut" class="layout-link" target="_blank"> <i class="fa fa-twitter" aria-hidden="true"></i></i> TWITTER</a></li>
-              <li><a href="https://fr.linkedin.com/in/josephlevarato" class="layout-link" target="_blank"> <i class="fa fa-linkedin-square" aria-hidden="true"></i> LINKEDIN</a></li>
-              <li><a href="https://github.com/Drillan767" class="layout-link" target="_blank"> <i class="fa fa-github" aria-hidden="true"></i> GITHUB</a></li>
-              <li><a href="http://www.viadeo.com/p/002poyycsp8djrm" class="layout-link" target="_blank"> <i class="fa fa-viadeo" aria-hidden="true"></i> VIADEO</a></li>
+              <li><a href="https://twitter.com/Jaeger_Naut" class="layout-link" target="_blank" title="Twitter"> <i class="fa fa-twitter" aria-hidden="true"></i></i> TWITTER</a></li>
+              <li><a href="https://fr.linkedin.com/in/josephlevarato" class="layout-link" target="_blank" title="Linkedin"> <i class="fa fa-linkedin-square" aria-hidden="true"></i> LINKEDIN</a></li>
+              <li><a href="https://github.com/Drillan767" class="layout-link" target="_blank" title="Github"> <i class="fa fa-github" aria-hidden="true"></i> GITHUB</a></li>
+              <li><a href="http://www.viadeo.com/p/002poyycsp8djrm" class="layout-link" target="_blank" title="Viadeo"> <i class="fa fa-viadeo" aria-hidden="true"></i> VIADEO</a></li>
             </ul>
 
           </div><!--/.nav-collapse -->
@@ -73,8 +73,7 @@
         <div class="detail-desc">
           <p>
             Je maîtrise les langages HTML5, CSS, Javascript, ainsi que la bibliothèques jQuery, et apprends AngularJS
-            et ReactJS. J'apprécie particulièrement les intégrations pixel perfect et le responsive en général, et le fait
-            que tout le monde puisse voir un site sur n'importe quel support en particulier.
+            et ReactJS.
           </p>
         </div>
       </div>
@@ -91,8 +90,6 @@
           <p>
             Je tente de me spécialiser dans le Ruby et son framework Ruby on Rails, mais je reste quand même à l'écoute
             des autres technologies, telles que PHP et Symfony.
-            Et, en même temps, un site où il ne se passe rien quand un visiteur clique sur un bouton est quand même
-            un peu triste.
           </p>
         </div>
       </div>
@@ -108,8 +105,7 @@
         <div class="detail-desc">
           <p>
             Un site fonctionnel, c'est bien. Un site fonctionnel où l'utilisateur arrive à ses fins en trois clics,
-            c'est mieux. Quoi de mieux que de se promener sans se perdre ? <br />Je suis convaincu que la navigation sur
-            un site doit être la plus intuitive possible
+            c'est mieux.Je suis convaincu que la navigation sur un site doit être la plus intuitive possible
           </p>
         </div>
       </div>
@@ -161,7 +157,7 @@
         </div>
       </div>
       <div class="col-md-12 detail-linkblock">
-        <%= link_to 'Voir mes créations', Portfolio, :class => 'detail-linkblock-link' %>
+        <%= link_to 'Voir mes créations', Portfolio, :class => 'detail-linkblock-link', :title => 'Porfolio' %>
       </div>
 
     </div>
@@ -178,37 +174,40 @@
         <br />
         N° SIRET : 818 885 907 00019
       </p>
-      <a href="tel:+33675566262" >06 75 56 62 62</a>
+      <a href="tel:+33675566262" title="Portable" >06 75 56 62 62</a>
     </div>
     <div class="footer-block col-md-2 col-md-offset-1">
       <h2>Liens utiles</h2>
       <p class="footer-block-social">
-        <%= link_to 'https://twitter.com/Jaeger_Naut', :target => '_blank' do %>
+        <%= link_to 'https://twitter.com/Jaeger_Naut', :target => '_blank', :title => 'twitter' do %>
             <i class="fa fa-twitter" aria-hidden="true"></i>
         <% end %>
-        <%= link_to 'https://fr.linkedin.com/in/josephlevarato', :target => '_blank' do %>
+        <%= link_to 'https://fr.linkedin.com/in/josephlevarato', :target => '_blank', :title => 'Linkedin' do %>
             <i class="fa fa-linkedin-square" aria-hidden="true"></i>
         <% end %>
-        <%= link_to 'https://github.com/Drillan767', :target => '_blank' do %>
+        <%= link_to 'https://github.com/Drillan767', :target => '_blank', :title => 'Github' do %>
             <i class="fa fa-github" aria-hidden="true"></i>
         <% end %>
+        <%= link_to 'http://www.viadeo.com/p/002poyycsp8djrm', :target => '_blank', :title => 'Viadeo' do %>
+            <i class="fa fa-viadeo" aria-hidden="true"></i>
+        <% end %>
         <br />
-        <%= link_to '/CVJosephLevaratoCDI.pdf', :target => '_blank' do %>
+        <%= link_to '/CVJosephLevaratoCDI.pdf', :target => '_blank', :title => 'CV' do %>
             <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
         <% end %>
       </p>
 
-      <%= link_to 'Me contacter', new_contact_path %>
+      <%= link_to 'Me contacter', new_contact_path, :title => 'Contact' %>
     </div>
     <div class="footer-block col-md-3 col-md-offset-1">
       <h2>Plan du site</h2>
       <ul class="footer-block-link">
-        <li><%= link_to 'Accueil', root_path %></li>
-        <li><%= link_to 'Portfolio', Portfolio %></li>
-        <li><%= link_to 'Articles', articles_url %></li>
-        <li><%= link_to 'À propos', '/a-propos' %></li>
-        <li><%= link_to 'Contact', new_contact_url %></li>
-        <li><%=link_to 'Mentions légales', '/mentions' %></li>
+        <li><%= link_to 'Accueil', root_path, :title => 'Accueil' %></li>
+        <li><%= link_to 'Portfolio', Portfolio, :title => 'Porfolio' %></li>
+        <li><%= link_to 'Articles', articles_url, :title => 'Articles' %></li>
+        <li><%= link_to 'À propos', '/a-propos', :title => 'A propos' %></li>
+        <li><%= link_to 'Contact', new_contact_url, :title => 'Contact' %></li>
+        <li><%=link_to 'Mentions légales', '/mentions', :title => 'Mentions légales' %></li>
       </ul>
     </div>
 
