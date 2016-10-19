@@ -28,6 +28,10 @@ $(document).ready(function(){
         traY = ((4 * mouseY) / 570) + 50;
         $(".title").css({"background-position": traX + "%" + traY + "%"});
     });
+
+    $('.pavecesar').append(
+        $(this).height()+'px'
+    )
 });
 
 // HighlightJS
@@ -46,6 +50,7 @@ $('span.icon-circle').hover(
     }
 );
 
+if($('body').is('.page.about')){
 var ctx1 = $("#chart1");
 Chart.defaults.global.defaultFontColor = '#fff';
 var chart1 = new Chart(ctx1, {
@@ -158,7 +163,7 @@ var chart2 = new Chart(ctx2, {
     }
 });
 
-if($('body').is('.page.about')){
+
     var ctx3 = $("#chart3");
     var chart3 = new Chart(ctx3, {
         type: 'doughnut',

@@ -28,9 +28,13 @@
   <div class="portfolio-body-right">
     <h1><%= @portfolio.titre %></h1>
     <h4><%= @portfolio.categorie %> — <%= @portfolio.date.strftime('%m / %Y') %></h4>
-    <p>
-      <%= simple_format(@portfolio.description)%>
-    </p>
+      <p>
+        <%= simple_format(@portfolio.description)%>
+      </p>
+    <br clear="all" />
+    <div class="portfolio-body-right-link">
+      <%= link_to 'VOIR', @portfolio.lien, :class => '', :target => '_blank' %>
+    </div>
   </div>
 
 </div>
