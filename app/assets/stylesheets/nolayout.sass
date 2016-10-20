@@ -69,19 +69,19 @@ body
   background: asset_url('background/lyon1080.jpg') center fixed
   height: 100vh
 
-.container
-  position: absolute
-  @include center()
+.main
+  margin-top: 20vh
+  padding-right: 10%
 
-.title
-  font-weight: 800
-  color: transparent
-  font-size: 120px
-  background: asset_url('background/snow_night.jpg') repeat 40% 50%
-  -webkit-background-clip: text
-  position: relative
-  line-height: 90px
-  letter-spacing: -10px
+  &-title
+    font-weight: 800
+    color: transparent
+    font-size: 120px
+    background: asset_url('background/snow_night.jpg') repeat 40% 50%
+    -webkit-background-clip: text
+    position: relative
+    line-height: 90px
+    letter-spacing: -10px
 
 .detail
   min-height: 100vh

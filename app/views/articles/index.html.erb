@@ -12,13 +12,13 @@
       <% if a.public %>
         <article class="col-md-12 articles-body-each">
 
-          <div class="col-md-3 articles-body-photo">
+          <div class="col-md-3 col-sm-6 articles-body-photo">
             <% if !a.image.url.nil? %>
               <%= link_to image_tag(a.image), a, :title => 'Lire '+a.titre %>
             <% end %>
           </div>
 
-          <div class="col-md-9 articles-body-content">
+          <div class="col-md-9 col-sm-6 articles-body-content">
 
             <h2><%= link_to a.titre, a, :title => 'Lire '+a.titre %></h2>
 

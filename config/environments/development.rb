@@ -24,13 +24,12 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      :address => "smtp.gmail.com",
-      :port => "587",
-      :domain => "mydomain.net",
-      :user_name => "jd.levarato@gmail.com",
-      :password => "GTFO NOOB",
-      :authentication => "plain",
-      :enable_starttls_auto => true
+      :address => 'smtp.gmail.com',
+      :port => 587,
+      :domain => 'gmail.com',
+      :user_name => 'contact.siteweb.jl@gmail.com',
+      :password => 'Qaq3C)8<Df6=fP*8',
+      :authentication => 'plain'
   }
 
   #A changer, pas urgent + copier dans production dans production.rb

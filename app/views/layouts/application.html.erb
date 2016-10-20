@@ -27,10 +27,10 @@
           <div id="navbar" class="navbar-collapse collapse">
 
             <ul class="nav navbar-nav">
-              <li><%= link_to 'PORTFOLIO', Portfolio, :title => 'Portfolios' %></li>
-              <li><%= link_to 'ARTICLES', articles_path, :title => 'Articles' %></li>
-              <li><%= link_to 'À PROPOS', '/a-propos', :title => 'A propos' %></li>
-              <li><%= link_to 'CONTACT', new_contact_path, :title => 'Contact' %></li>
+              <li><%= link_to 'PORTFOLIO', Portfolio, :title => 'Portfolios', :class => current_page?(Portfolio) ? 'current' : '' %></li>
+              <li><%= link_to 'ARTICLES', articles_path, :title => 'Articles', :class => current_page?(articles_path) ? 'current' : '' %></li>
+              <li><%= link_to 'À PROPOS', '/a-propos', :title => 'A propos', :class => current_page?('/a-propos') ? 'current' : '' %></li>
+              <li><%= link_to 'CONTACT', new_contact_path, :title => 'Contact', :class => current_page?(new_contact_path) ? 'current' : '' %></li>
               <% if user_signed_in? %>
                   <li><%= link_to 'ADMINISTRATION','/admin' %></li>
                   <li><%= link_to 'DECONNEXION', destroy_user_session_path, method: :delete %></li>

@@ -6,7 +6,7 @@
   <% @portfolios.each do |p| %>
     <% if p.public %>
       <%= link_to p, :title => p.titre do %>
-        <div class="col-md-3 bloc">
+        <div class="col-sm-3 bloc">
           <div class="hovereffect">
             <%= image_tag p.thumbnail, :class=> 'img-responsive' %>
             <div class="overlay">
@@ -34,7 +34,7 @@
 
   <% end %>
   <% end %>
-  <div class="col-md-3 bloc">
+  <div class="col-sm-3 bloc">
     <div class="hovereffect">
       <%= image_tag 'code', :class=> 'img-responsive' %>
       <div class="overlay">
