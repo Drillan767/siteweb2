@@ -10,6 +10,10 @@ public/uploads
 public/portfolio
 public/articles
 db/migrate
+#Evitons que nos infos de connexion google ne se retrouvent partout :D
+config/environments/development.rb
+config/environments/production.rb
+config/initializers/smtp_settings.rb
 
 # Ignore Byebug command history file.
 .byebug_history
