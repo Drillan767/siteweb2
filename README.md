@@ -37,4 +37,6 @@ Tentons de faire ça proprement :
   * Partie "qui suis-je", "contrat d'utilisation" et "plan du site" encore vide
   * Bower installé
   * Layout intégré \o/
+  * Responsive NORMALEMENT terminé \o/
+  * Mentions légales rajoutées
   * Ajout d'une partie permettant de se déco et d'accéder à l'administration lorsque connecté dans la nav (#da03822)
