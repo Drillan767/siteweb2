@@ -19,6 +19,7 @@ if($('body').is('.portfolio.show')){
 }
 
 $(document).ready(function(){
+    // parallax d'accueil
     var mouseX, mouseY;
     var traX, traY;
     $(document).mousemove(function(e){
@@ -26,20 +27,26 @@ $(document).ready(function(){
         mouseY = e.pageY;
         traX = ((4 * mouseX) / 570) + 40;
         traY = ((4 * mouseY) / 570) + 50;
-        $(".title").css({"background-position": traX + "%" + traY + "%"});
+        $(".main-title").css({"background-position": traX + "%" + traY + "%"});
     });
 
-    $('.pavecesar').append(
-        $(this).height()+'px'
-    )
+    // balises og:image
+    if($('body').is('.portfolio.index')){
+        var bg_img = $('.wrapper').css('background-image').replace(/^url\(['"](.+)['"]\)/, '$1').split('/').pop().replace(/\"|\'|\)/g,'');
+        $("meta[property='og\\:image']").attr("content", 'josephlevarato.fr/background/'+bg_img);
+    }
+
+    // Savoir sur quelle page on est
+    var currentURL = document.location.href.split('/');
+    $('.nav-link.current').removeClass('current');
+    activeLinks = $('.nav-link a').filter(function () {
+        return this.href === document.location.origin+'/'+currentURL[3];
+    }).closest('.nav-link').addClass('current');
+
 });
 
 // HighlightJS
 hljs.initHighlightingOnLoad();
-
-// external js: masonry.pkgd.js, imagesloaded.pkgd.js
-
-// init Isotope
 
 $('span.icon-circle').hover(
     function() {

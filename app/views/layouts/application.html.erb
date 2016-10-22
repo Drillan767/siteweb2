@@ -4,6 +4,22 @@
     <title><%= titre %></title>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <meta name="description" content="Site web personnel de Joseph Levarato | Contient un portfolio et des articles / tutoriels sur Rails">
+    <meta name="keyword" content="Joseph Levarato, Lyon, Developpeur, PHP, Ruby on Rails, ">
+    <meta name="twitter:site" content="@jaeger_naut"/>
+    <meta name="twitter:image" content="http://josephlevarato.fr/background/lyon1080.jpg"/>
+    <meta property="og:title" content="<%= titre %>">
+    <meta property="og:description" content="Site web de Joseph Levarato | Contient un portfolio et des articles / tutoriels sur Rails"/>
+    <meta property="og:image" content="http://josephlevarato.fr/background/lyon1080.jpg"/>
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:site_name" content="Joseph Levarato" />
+    <meta property="og:type" content="website" />
+    <meta name="generator" content="Rubymine 2016.2">
+    <meta name="geo.region" content="FR" />
+    <meta name="geo.placename" content="Lyon" />
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'responsive', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -27,13 +43,13 @@
           <div id="navbar" class="navbar-collapse collapse">
 
             <ul class="nav navbar-nav">
-              <li><%= link_to 'PORTFOLIO', Portfolio, :title => 'Portfolios', :class => current_page?(Portfolio) ? 'current' : '' %></li>
-              <li><%= link_to 'ARTICLES', articles_path, :title => 'Articles', :class => current_page?(articles_path) ? 'current' : '' %></li>
-              <li><%= link_to 'À PROPOS', '/a-propos', :title => 'A propos', :class => current_page?('/a-propos') ? 'current' : '' %></li>
-              <li><%= link_to 'CONTACT', new_contact_path, :title => 'Contact', :class => current_page?(new_contact_path) ? 'current' : '' %></li>
+              <li class="nav-link"><%= link_to 'PORTFOLIO', Portfolio, :title => 'Portfolios' %></li>
+              <li class="nav-link"><%= link_to 'ARTICLES', articles_path, :title => 'Articles' %></li>
+              <li class="nav-link"><%= link_to 'À PROPOS', '/a-propos', :title => 'A propos' %></li>
+              <li class="nav-link"><%= link_to 'CONTACT', new_contact_path, :title => 'Contact' %></li>
               <% if user_signed_in? %>
-                  <li><%= link_to 'ADMINISTRATION','/admin' %></li>
-                  <li><%= link_to 'DECONNEXION', destroy_user_session_path, method: :delete %></li>
+                <li class="nav-link"><%= link_to 'ADMINISTRATION','/admin' %></li>
+                <li><%= link_to 'DECONNEXION', destroy_user_session_path, method: :delete %></li>
               <% end %>
             </ul>
 
@@ -52,7 +68,12 @@
     </div> <!-- /container -->
 
     <% if notice %>
-        <p class="alert alert-success"><%= notice %></p>
+        <!--<p class="alert alert-success"><%= notice %></p>-->
+        <div class="col-md-4 col-md-offset-4 layout-notice">
+          <p>
+            <%= notice %>
+          </p>
+        </div>
     <% end %>
     <% if alert %>
         <p class="alert alert-danger"><%= alert %></p>

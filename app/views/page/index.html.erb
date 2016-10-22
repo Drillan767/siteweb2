@@ -1,8 +1,25 @@
 <!DOCTYPE>
 <html lang="fr">
 <head>
+  <meta charset="UTF-8" />
   <title><%= titre %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <meta name="description" content="Site web personnel de Joseph Levarato | Contient un portfolio et des articles / tutoriels sur Rails">
+  <meta name="keyword" content="Joseph Levarato, Lyon, Developpeur, PHP, Ruby on Rails, ">
+  <meta name="twitter:site" content="@jaeger_naut"/>
+  <meta name="twitter:image" content="http://josephlevarato.fr/background/lyon1080.jpg"/>
+  <meta property="og:title" content="<%= titre %>">
+  <meta property="og:description" content="Site web de Joseph Levarato | Contient un portfolio et des articles / tutoriels sur Rails"/>
+  <meta property="og:image" content="http://josephlevarato.fr/background/lyon1080.jpg"/>
+  <meta property="og:url" content="<%= request.original_url %>" />
+  <meta property="og:site_name" content="Joseph Levarato" />
+  <meta property="og:type" content="website" />
+  <meta name="generator" content="Rubymine 2016.2">
+  <meta name="geo.region" content="FR" />
+  <meta name="geo.placename" content="Lyon" />
+
   <%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= stylesheet_link_tag 'responsive', media: 'all', 'data-turbolinks-track': 'reload' %>
 </head>
@@ -208,6 +225,7 @@
         <li><%= link_to 'À propos', '/a-propos', :title => 'A propos' %></li>
         <li><%= link_to 'Contact', new_contact_url, :title => 'Contact' %></li>
         <li><%=link_to 'Mentions légales', '/mentions', :title => 'Mentions légales' %></li>
+
       </ul>
     </div>
 
