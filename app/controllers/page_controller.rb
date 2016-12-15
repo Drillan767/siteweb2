@@ -7,6 +7,9 @@ class PageController < ApplicationController
 
   def admin
     @titre = 'Partie Admin'
+
+    @portfolios = Portfolio.all
+    @articles = Article.all
   end
 
   def about

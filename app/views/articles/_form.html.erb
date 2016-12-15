@@ -4,7 +4,7 @@
     <%= f.text_field :titre, :placeholder => 'Titre' %> <br />
     <%= f.text_field :categorie, :placeholder => 'Catégorie'%><br />
     <%= f.check_box :public %><br />
-    <%= f.text_area :contenu, :placeholder => 'Contenu' %><br />
+    <%= f.cktext_area :contenu, rows: 10 %><br />
     <%= f.file_field :image %><br />
   </div>
 
@@ -12,4 +12,6 @@
     <%= f.button :submit %>
   </div>
 <% end %>
+
+<%= javascript_include_tag Ckeditor.cdn_url %>
 

@@ -1,6 +1,81 @@
-<h1>Partie Admin</h1>
+<h1>Administration</h1>
 
-<ul>
-  <li><%= link_to 'Accéder aux articles', articles_path %></li>
-  <li><%= link_to 'Accéder au portfolio', portfolios_path %></li>
-</ul>
+<div class="col-md-10 col-md-offset-1 admin-body">
+
+
+<br clear="all" />
+<!--<ul>
+<li><%= link_to 'Accéder aux articles', articles_path %></li>
+ <li><%= link_to 'Accéder au portfolio', Portfolio %>
+</ul>-->
+
+  <div class="col-md-6 admin-body-panel">
+    <h1>
+      Articles
+      <small>
+        <%= link_to new_article_path do %>
+          Nouvel article <i class="fa fa-plus-square" aria-hidden="true"></i>
+        <% end %>
+      </small>
+    </h1>
+
+    <table class="table admin-body-panel-table">
+      <tbody>
+        <% if @articles.any? %>
+          <% @articles.each do |a| %>
+          <tr>
+            <td><%= image_tag a.image, :class => 'zoom table-image' %></td>
+            <td><%= a.titre %></td>
+            <td><%= a.categorie %></td>
+            <td>
+              <% if a.categorie %>
+                <span style="color: green; font-weight: bold">Publié</span>
+              <% else %>
+                <span style="color: orangered; font-weight: bold ">Brouillon</span>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to 'Voir', article_path(a) %>
+            </td>
+          </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="col-md-6 admin-body-panel">
+    <h1>
+      Portfolio
+      <small>
+        <%= link_to new_portfolio_path do %>
+            Nouveau projet <i class="fa fa-plus-square" aria-hidden="true"></i>
+        <% end %>
+      </small>
+    </h1>
+
+    <table class="table admin-body-panel-table">
+      <tbody>
+      <% if @portfolios.any? %>
+          <% @portfolios.each do |p| %>
+              <tr>
+                <td><%= image_tag p.thumbnail, :class => 'zoom table-image' %></td>
+                <td><%= p.titre %></td>
+                <td><%= p.date.strftime('%m / %Y') %></td>
+                <td><%= p.categorie %></td>
+                <td>
+                  <% if p.categorie %>
+                      <span style="color: green; font-weight: bold">Publié</span>
+                  <% else %>
+                      <span style="color: orangered; font-weight: bold ">Brouillon</span>
+                  <% end %>
+                </td>
+                <td><%= link_to 'Voir', portfolio_path(p) %></td>
+              </tr>
+          <% end %>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

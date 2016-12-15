@@ -6,6 +6,7 @@
 //= require zoomify
 //= require highlightjs
 //= require chart.js/dist/Chart.min.js
+//= require ckeditor/init
 //= require script
 // require turbolinks
 //= require_tree .

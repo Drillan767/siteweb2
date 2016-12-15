@@ -7,6 +7,9 @@
   &-add
     margin-top: 20px
 
+  &-content
+    position: relative
+
   & h1
     color: white
     font-family: Montserrat-Light, sans-serif
@@ -164,6 +167,10 @@ body
 .grid-item
   float: left
   padding: 3px
+
+  &-edit
+    @extend .grid-item
+    width: 20%
 
 .grid-item img
   display: block

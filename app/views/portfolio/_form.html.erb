@@ -1,4 +1,4 @@
-<%= form_for @portfolio, :html => {:multipart => true} do |f| %>
+  <%= form_for @portfolio, :html => {:multipart => true} do |f| %>
 
     <div class="form-inputs">
       <h6>Titre</h6>
@@ -16,11 +16,6 @@
       <h6>Thumbnail</h6>
       <%= f.file_field :thumbnail %>
       <br />
-      <h6>Image actuelle : </h6>
-      <% if @portfolio.thumbnail.present? %>
-      <%= image_tag @portfolio.thumbnail %>
-      <% end %>
-
       <h6>Images multiples</h6>
       <%= file_field_tag "images[]", type: :file, multiple: true %>
     </div>
@@ -29,9 +24,4 @@
       <%= f.button :submit %>
     </div>
 
-
-    <% @portfolio.photos.each do |p| %>
-        <%= image_tag p.image.url, :class => 'zoom' %>
-        <%= link_to 'Destroy', p, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
 <% end %>

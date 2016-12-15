@@ -4,3 +4,17 @@
 
 <%= link_to 'Show', @portfolio %> |
 <%= link_to 'Back', portfolio_index_path %>
+
+<h6>Vignette actuelle : </h6>
+<% if @portfolio.thumbnail.present? %>
+    <%= image_tag @portfolio.thumbnail %>
+<% end %>
+
+<div class="portfolio-content">
+  <div class="grid-sizer"></div>
+  <% @portfolio.photos.shuffle.each do |p|%>
+      <div class="grid-item-edit">
+        <%= image_tag p.image.url, :class => 'zoom' %>
+      </div>
+  <% end %>
+</div>

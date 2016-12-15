@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :articles
-  resources :portfolio
+  mount Ckeditor::Engine => '/ckeditor'
+
   # Index (duh)
   root to: 'page#index'
 

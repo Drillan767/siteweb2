@@ -68,12 +68,12 @@
     </div> <!-- /container -->
 
     <% if notice %>
-        <!--<p class="alert alert-success"><%= notice %></p>-->
         <div class="col-md-4 col-md-offset-4 layout-notice">
           <p>
             <%= notice %>
           </p>
         </div>
+        <br clear="all" />
     <% end %>
     <% if alert %>
         <p class="alert alert-danger"><%= alert %></p>
@@ -133,5 +133,18 @@
   </footer>
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'ckeditor/ckeditor.js' %>
+  <script type="text/javascript">
+    if($('body').is('.articles.new')){
+      $(document).ready(function() {
+      if ($('textarea').length > 0) {
+        var data = $('textarea');
+        $.each(data, function(i) {
+          CKEDITOR.replace(data[i].id);
+        });
+      }
+    });
+  }
+  </script>
   </body>
 </html>
