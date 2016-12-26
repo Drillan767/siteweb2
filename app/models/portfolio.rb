@@ -8,4 +8,3 @@ class Portfolio < ApplicationRecord
   validates_uniqueness_of :slug
 
 end
-
