@@ -12,18 +12,22 @@ Rails.application.routes.draw do
     resources :articles
     resources :portfolio
       end
+    get '/admin' => 'page#admin'
+    resources :portfolios, path: 'portfolio'
+    resources :articles
+  end
 
   # Gestion utilisateur
-  devise_for :users, :controller => { :registrations => 'registrations' }
+  devise_for :users, except: :new_session_user, :controller => { :registrations => 'registrations' }
 
   # Se logger en tapant /login
   devise_scope :user do
-    get '/login' => 'devise/sessions#new'
+    get '/login' => 'devise/sessions#new', as: :login
   end
 
   # Pages du portfolio visibles par les visiteurs
   resources :photos, only: [:show]
-  resources :portfolio, only: [:show, :index]
+  resources :portfolios, path: 'portfolio', only: [:show, :index]
 
   # Pages des articles visibles par les visiteurs
   resources :articles, only: [:show, :index]
@@ -36,12 +40,5 @@ Rails.application.routes.draw do
 
   match '/a-propos', to: 'page#about', via: :get
   match '/mentions', to: 'page#cgu', via: :get
-
-
-
-  # Pages statiques
-
-
-  #get 'page/map'
 
 end

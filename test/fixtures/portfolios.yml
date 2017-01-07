@@ -4,10 +4,16 @@ one:
   titre: MyString
   description: MyText
   public: false
+  slug: MyString
   thumbnail: MyString
+  categorie: MyString
+  date: 2016-12-26 15:57:26
 
 two:
   titre: MyString
   description: MyText
   public: false
+  slug: MyString
   thumbnail: MyString
+  categorie: MyString
+  date: 2016-12-26 15:57:26
