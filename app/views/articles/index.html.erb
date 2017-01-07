@@ -9,7 +9,7 @@
 
   <% if @articles.exists? %>
     <% @articles.reverse_each do |a| %>
-      <% if a.public %>
+      <% if a.public or current_user %>
         <article class="col-md-12 articles-body-each">
 
           <div class="col-md-3 col-sm-6 articles-body-photo">

@@ -1,17 +1,48 @@
 <%= form_for(@article) do |f| %>
 
-  <div class="form-inputs">
-    <%= f.text_field :titre, :placeholder => 'Titre' %> <br />
-    <%= f.text_field :categorie, :placeholder => 'Catégorie'%><br />
-    <%= f.check_box :public %><br />
-    <%= f.cktext_area :contenu, rows: 10 %><br />
-    <%= f.file_field :image %><br />
-  </div>
+  <div class="articles-body col-md-10 col-md-offset-1">
+
+    <div class="form-group">
+      <div class="col-md-6">
+        <%= f.text_field :titre, :placeholder => 'Titre', :class => 'articles-body-inputs' %>
+      </div>
+    </div>
+
+    <br clear="all" />
+
+    <div class="form-group">
+      <div class="col-md-6">
+        <%= f.text_field :categorie, :placeholder => 'Catégorie', :class => 'articles-body-inputs'%>
+      </div>
+    </div>
+
+    <br clear="all" />
+
+    <div class="form-group">
+      <%= f.cktext_area :contenu, rows: 10 %><br />
+    </div>
+
+    <div class="col-md-4">
+      <%= f.label :image, 'Aperçu', :class => 'col-md-4 control-label' %>
+      <div class="col-md-4">
+        <%= f.file_field :image, :class => 'input-file' %>
+      </div>
+    </div>
+
+    <br clear="all" />
+
+    <div class="form-group">
+      <div class="col-md-4">
+        <%= f.label :public, "Publier l'article ?",:class => 'col-md-4 control-label' %>
+        <%= f.check_box :public  %>
+      </div>
+    </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button 'Enregistrer' %>
   </div>
 <% end %>
 
-<%= javascript_include_tag Ckeditor.cdn_url %>
+</div>
 
+<%= javascript_include_tag Ckeditor.cdn_url %>

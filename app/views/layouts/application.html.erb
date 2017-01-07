@@ -133,18 +133,6 @@
   </footer>
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'ckeditor/ckeditor.js' %>
-  <script type="text/javascript">
-    if($('body').is('.articles.new')){
-      $(document).ready(function() {
-      if ($('textarea').length > 0) {
-        var data = $('textarea');
-        $.each(data, function(i) {
-          CKEDITOR.replace(data[i].id);
-        });
-      }
-    });
-  }
-  </script>
+  <%= yield(:script) %>
   </body>
 </html>

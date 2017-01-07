@@ -22,6 +22,7 @@
   <div class="articles-body-content">
     <div class="col-md-8">
       <%= simple_format(@article.contenu) %>
+      <div id="disqus_thread"></div>
     </div>
     <div class="col-md-4 articles-latest">
       <h4> Derniers articles</h4>
@@ -37,4 +38,7 @@
   </div>
 </div>
 
+<% content_for(:script) do %>
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5870f391031488b7"></script>
+<% end %>
 

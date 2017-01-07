@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   authenticated :user do
     #Index admin
     match '/admin', to: 'page#admin', via: :get
+    resources :articles
+    resources :portfolio
       end
 
   # Gestion utilisateur

@@ -1,7 +1,6 @@
 /*
  *= require bootstrap/dist/css/bootstrap
- *= require highlightjs/styles/default
- * On peut modifier l'apparence du bouzin en choisissant autre chose que défaut
+ *= require highlightjs/styles/dark
  *= require fontawesome
  *= require zoomify/dist/zoomify
  *= require_self
