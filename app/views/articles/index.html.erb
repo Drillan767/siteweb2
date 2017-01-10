@@ -20,11 +20,9 @@
 
           <div class="col-md-9 col-sm-6 articles-body-content">
 
-            <%= raw tag_links(a.all_tags) %>
-
             <h2><%= link_to a.titre, a, :title => 'Lire '+a.titre %></h2>
 
-            <h4><%= a.categorie %> — Le <%= a.created_at.strftime('%d / %m / %Y') %></h4>
+            <h4>Dans <%= raw tag_links(a.all_tags) %> — Le <%= a.created_at.strftime('%d / %m / %Y') %></h4>
             <p>
               <%= strip_tags(a.contenu).truncate_words(75, omission: '...') %>
             </p>

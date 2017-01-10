@@ -3,8 +3,9 @@ class Article < ApplicationRecord
   mount_uploader :image, ArticleUploader
   extend FriendlyId
   friendly_id :titre, use: :slugged
-  has_many :taggings
+  has_many :taggings, :inverse_of => :article, :dependent => :destroy
   has_many :tags, through: :taggings
+
 
   def all_tags=(names)
     self.tags = names.split(',').map do |name|
@@ -17,7 +18,7 @@ class Article < ApplicationRecord
   end
 
     def self.tagged_with(name)
-   Tag.find_by_name!(name).article
+   Tag.find_by_name!(name).articles
   end
 
 end
