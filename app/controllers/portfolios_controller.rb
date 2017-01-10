@@ -1,22 +1,26 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
 
+  # GET /portfolios
   def index
     @portfolios = Portfolio.all
     @titre = 'Portfolio'
   end
 
+  # GET /portfolios/1
   def show
   end
 
+  # GET /portfolios/new
   def new
     @portfolio = Portfolio.new
   end
 
+  # GET /portfolios/1/edit
   def edit
   end
 
-
+  # POST /portfolios
   def create
     @portfolio = Portfolio.new(portfolio_params)
 
@@ -36,11 +40,12 @@ class PortfoliosController < ApplicationController
   # PATCH/PUT /portfolios/1
   def update
     if @portfolio.update(portfolio_params)
-      if params[:images]
-        params[:images].each { |image|
-          @portfolio.photos.create(image: image)
-        }
-      end
+        # to handle multiple images upload on create
+        if params[:images]
+          params[:images].each { |image|
+            @portfolio.photos.create(image: image)
+          }
+        end
       redirect_to @portfolio, notice: 'Portfolio was successfully updated.'
     else
       render :edit
@@ -61,6 +66,6 @@ class PortfoliosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def portfolio_params
-      params.require(:portfolio).permit(:titre, :description, :public, :slug, :thumbnail, :categorie, :date)
+      params.require(:portfolio).permit(:titre, :description, :public, :thumbnail, :categorie, :slug)
     end
 end

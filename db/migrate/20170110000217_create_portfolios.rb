@@ -4,11 +4,9 @@ class CreatePortfolios < ActiveRecord::Migration[5.0]
       t.string :titre
       t.text :description
       t.boolean :public
-      t.string :slug
-      t.string :lien
       t.string :thumbnail
       t.string :categorie
-      t.datetime :date
+      t.string :slug
 
       t.timestamps
     end

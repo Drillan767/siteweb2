@@ -43,7 +43,7 @@
           <div id="navbar" class="navbar-collapse collapse">
 
             <ul class="nav navbar-nav">
-              <li class="nav-link"><%= link_to 'PORTFOLIO', Portfolio, :title => 'Portfolios' %></li>
+              <li class="nav-link"><%= link_to 'PORTFOLIO', portfolios_path, :title => 'Portfolios' %></li>
               <li class="nav-link"><%= link_to 'ARTICLES', articles_path, :title => 'Articles' %></li>
               <li class="nav-link"><%= link_to 'À PROPOS', '/a-propos', :title => 'A propos' %></li>
               <li class="nav-link"><%= link_to 'CONTACT', new_contact_path, :title => 'Contact' %></li>
@@ -122,7 +122,7 @@
       <h2>Plan du site</h2>
       <ul class="footer-block-link">
         <li><%= link_to 'Accueil', root_path, :title => 'Accueil' %></li>
-        <li><%= link_to 'Portfolio', Portfolio, :title => 'Porfolio' %></li>
+        <li><%= link_to 'Portfolio', portfolios_path, :title => 'Porfolio' %></li>
         <li><%= link_to 'Articles', articles_url, :title => 'Articles' %></li>
         <li><%= link_to 'À propos', '/a-propos', :title => 'A propos' %></li>
         <li><%= link_to 'Contact', new_contact_url, :title => 'Contact' %></li>

@@ -1,27 +1,47 @@
-  <%= form_for @portfolio, :html => {:multipart => true} do |f| %>
+<%= form_for @portfolio, url: portfolios_path(@portfolio) do |f| %>
+  <% if portfolio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(portfolio.errors.count, "error") %> prohibited this portfolio from being saved:</h2>
 
-    <div class="form-inputs">
-      <h6>Titre</h6>
-      <%= f.text_field :titre %>
-      <h6>Date de création</h6>
-      <%= f.date_select :date, start_year: 2010, order: [:month, :year] %>
-      <h6>Catégorie</h6>
-      <%= f.text_field :categorie %>
-      <h6>Description</h6>
-      <%= f.text_area :description %>
-      <h6>Public</h6>
-      <%= f.check_box :public %>
-      <h6>Lien</h6>
-      <%= f.text_field :lien %>
-      <h6>Thumbnail</h6>
-      <%= f.file_field :thumbnail %>
-      <br />
-      <h6>Images multiples</h6>
-      <%= file_field_tag "images[]", type: :file, multiple: true %>
+      <ul>
+      <% portfolio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
     </div>
+  <% end %>
 
-    <div class="form-actions">
-      <%= f.button :submit %>
-    </div>
+  <div class="field">
+    <%= f.label :titre %>
+    <%= f.text_field :titre %>
+  </div>
 
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :public %>
+    <%= f.check_box :public %>
+  </div>
+
+  <div class="field">
+    <%= f.label :thumbnail %>
+    <%= f.text_field :thumbnail %>
+  </div>
+
+  <div class="field">
+    <%= f.label :categorie %>
+    <%= f.text_field :categorie %>
+  </div>
+
+  <div class="field">
+    <%= f.label :slug %>
+    <%= f.text_field :slug %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>

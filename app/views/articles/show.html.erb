@@ -27,11 +27,13 @@
     <div class="col-md-4 articles-latest">
       <h4> Derniers articles</h4>
       <% @articles.first(5).reverse_each do |a| %>
-        <%= link_to a, :class => current_page?(a) ? 'hide' : '', :title => 'Voir '+ a.titre do %>
-          <article class="title" style="background: url('<%= a.image.url %>') no-repeat center">
-            <h3><%= a.titre %></h3>
-            <h5><%= a.categorie %></h5>
-          </article>
+        <% if a.public %>
+          <%= link_to a, :class => current_page?(a) ? 'hide' : '', :title => 'Voir '+ a.titre do %>
+            <article class="title" style="background: url('<%= a.image.url %>') no-repeat center">
+              <h3><%= a.titre %></h3>
+              <h5><%= a.categorie %></h5>
+            </article>
+          <% end %>
         <% end %>
       <% end %>
     </div>

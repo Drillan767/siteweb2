@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :portfolios
   mount Ckeditor::Engine => '/ckeditor'
 
   # Index (duh)
@@ -10,10 +11,9 @@ Rails.application.routes.draw do
     #Index admin
     match '/admin', to: 'page#admin', via: :get
     resources :articles
-    resources :portfolio
-      end
+
     get '/admin' => 'page#admin'
-    resources :portfolios, path: 'portfolio'
+    resources :portfolios
     resources :articles
   end
 
@@ -27,7 +27,7 @@ Rails.application.routes.draw do
 
   # Pages du portfolio visibles par les visiteurs
   resources :photos, only: [:show]
-  resources :portfolios, path: 'portfolio', only: [:show, :index]
+  resources :portfolios, only: [:show, :index]
 
   # Pages des articles visibles par les visiteurs
   resources :articles, only: [:show, :index]
