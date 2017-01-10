@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :portfolios
+  resources :tasks
+  get 'tags/:tag', to: 'articles#index', as: "tag"
+  
   mount Ckeditor::Engine => '/ckeditor'
 
   # Index (duh)

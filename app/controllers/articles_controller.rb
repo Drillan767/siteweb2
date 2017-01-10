@@ -2,7 +2,13 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
-    @articles = Article.all
+
+    if params[:tag]
+      @articles = Article.tagged_with(params[:tag])
+    else
+      @articles = Article.all
+    end
+
     @titre = 'Articles'
   end
 
@@ -54,6 +60,6 @@ class ArticlesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def article_params
-      params.require(:article).permit(:titre, :categorie, :contenu, :image, :slug, :public)
+      params.require(:article).permit(:titre, :categorie, :contenu, :image, :slug, :public, :all_tags)
     end
 end
