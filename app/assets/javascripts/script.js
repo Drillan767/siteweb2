@@ -57,21 +57,14 @@ switch(body){
 
     case 'portfolio show':
     case 'portfolio edit':
-        $(document).ready(function(){
-            var grid = document.querySelector('.grid');
-
-            var msnry = new Masonry( grid, {
-                itemSelector: '.grid-item',
-                columnWidth: '.grid-sizer',
-                percentPosition: true
-            });
-
-            imagesLoaded( grid ).on( 'progress', function() {
-                // layout Masonry after each image loads
-                msnry.layout();
-            });
-
-            $('img.zoom').zoomify();
+        var $grid = $('.grid').masonry({
+            itemSelector: '.grid-item',
+            percentPosition: true,
+            columnWidth: '.grid-sizer'
+        });
+// layout Isotope after each image loads
+        $grid.imagesLoaded().progress( function() {
+            $grid.masonry();
         });
         break;
 

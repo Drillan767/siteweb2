@@ -1,7 +1,7 @@
-<%= form_for @portfolio, url: portfolios_path(@portfolio) do |f| %>
+<%= form_for(@portfolio) do |f| %>
   <% if portfolio.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(portfolio.errors.count, "error") %> prohibited this portfolio from being saved:</h2>
+      <h2><%= pluralize(portfolio.errors.count, 'error') %> prohibited this portfolio from being saved:</h2>
 
       <ul>
       <% portfolio.errors.full_messages.each do |message| %>
@@ -17,9 +17,21 @@
   </div>
 
   <div class="field">
+    <%= f.label :categorie %>
+    <%= f.text_field :categorie %>
+  </div>
+
+  <div class="field">
     <%= f.label :description %>
     <%= f.text_area :description %>
   </div>
+  <div class="field">
+    <label for='images[]'>Multi Upload</label>
+    <%= file_field_tag 'images[]', type: :file, multiple: true %>
+  </div>
+
+  <h6>Date de création</h6>
+  <%= f.date_select :date, start_year: 2010, order: [:month, :year] %>
 
   <div class="field">
     <%= f.label :public %>
@@ -28,20 +40,15 @@
 
   <div class="field">
     <%= f.label :thumbnail %>
-    <%= f.text_field :thumbnail %>
+    <%= f.file_field :thumbnail %>
   </div>
 
   <div class="field">
-    <%= f.label :categorie %>
-    <%= f.text_field :categorie %>
-  </div>
-
-  <div class="field">
-    <%= f.label :slug %>
-    <%= f.text_field :slug %>
+    <%= f.label :lien %>
+    <%= f.text_field :lien %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Enregistrer' %>
   </div>
 <% end %>

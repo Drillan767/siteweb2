@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :tasks
-  get 'tags/:tag', to: 'articles#index', as: "tag"
-  
   mount Ckeditor::Engine => '/ckeditor'
 
   # Index (duh)
@@ -33,6 +30,7 @@ Rails.application.routes.draw do
 
   # Pages des articles visibles par les visiteurs
   resources :articles, only: [:show, :index]
+  get 'tags/:tag', to: 'articles#index', as: 'tag'
 
   # Partie contact
   get '/contact', to: 'contacts#new', as: :new_contact
@@ -42,5 +40,10 @@ Rails.application.routes.draw do
 
   match '/a-propos', to: 'page#about', via: :get
   match '/mentions', to: 'page#cgu', via: :get
+
+
+  match '/404', :to => 'errors#not_found', :via => :all
+  match '/500', :to => 'errors#internal_server_error', :via => :all
+  resources :tasks
 
 end

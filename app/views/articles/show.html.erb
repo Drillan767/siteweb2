@@ -30,7 +30,7 @@
       <% @articles.first(5).reverse_each do |a| %>
         <% if a.public %>
           <%= link_to a, :class => current_page?(a) ? 'hide' : '', :title => 'Voir '+ a.titre do %>
-            <article class="title" style="background: url('<%= a.image.url %>') no-repeat center">
+            <article class="title" style="background: url('<%= a.image.url %>') no-repeat bottom">
               <h3><%= a.titre %></h3>
               <h5><%= a.categorie %></h5>
             </article>

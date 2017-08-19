@@ -31,7 +31,7 @@ class PortfoliosController < ApplicationController
           @portfolio.photos.create(image: image)
         }
       end
-      redirect_to @portfolio, notice: 'Portfolio was successfully created.'
+      redirect_to @portfolio, notice: 'Portfolio créé.'
     else
       render :new
     end
@@ -41,12 +41,14 @@ class PortfoliosController < ApplicationController
   def update
     if @portfolio.update(portfolio_params)
         # to handle multiple images upload on create
+=begin
         if params[:images]
           params[:images].each { |image|
             @portfolio.photos.create(image: image)
           }
         end
-      redirect_to @portfolio, notice: 'Portfolio was successfully updated.'
+=end
+      redirect_to @portfolio, notice: 'Portfolio mis à jour.'
     else
       render :edit
     end
@@ -55,7 +57,7 @@ class PortfoliosController < ApplicationController
   # DELETE /portfolios/1
   def destroy
     @portfolio.destroy
-    redirect_to portfolios_url, notice: 'Portfolio was successfully destroyed.'
+    redirect_to portfolios_url, notice: 'Portfolio supprimé.'
   end
 
   private
@@ -66,6 +68,6 @@ class PortfoliosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def portfolio_params
-      params.require(:portfolio).permit(:titre, :description, :public, :thumbnail, :categorie, :slug)
+      params.require(:portfolio).permit(:titre, :description, :public, :thumbnail, :categorie, :slug, :date, :lien)
     end
 end
